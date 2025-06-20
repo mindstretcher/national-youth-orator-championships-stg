@@ -14,7 +14,7 @@ const Timeline = () => {
     {
       date: "By 1 August 2025",
       title: "Submission Deadline",
-      description: "Submit your video speech (Schools: up to 3 per division | Individual entries welcome)",
+      description: "Submit your video speech",
       icon: Upload,
       type: "preliminary"
     },

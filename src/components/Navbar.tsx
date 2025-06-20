@@ -54,7 +54,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 md:h-16">
           <div className="flex-shrink-0">
             <div className="flex items-center">
               <h1 className={cn(
@@ -67,7 +67,7 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button 
                 onClick={() => scrollToSection('why-take-part')} 
@@ -139,7 +139,7 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={toggleMenu} 
               className={cn(
@@ -155,7 +155,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <div className={cn(
-        "md:hidden transition-all duration-300 overflow-hidden w-full",
+        "lg:hidden transition-all duration-300 overflow-hidden w-full",
         isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
       )}>
         <div className={cn(

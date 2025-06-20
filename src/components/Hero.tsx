@@ -43,8 +43,8 @@ const Hero = () => {
   };
   
   return (
-    <motion.div className="relative mt-16 md:mt-0 w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container relative overflow-hidden min-h-[90vh] md:h-[850px] w-full">
+    <motion.div className="relative w-full pt-14" initial="hidden" animate="visible" variants={containerVariants}>
+      <div className="banner-container relative overflow-hidden min-h-[100vh] md:h-[850px] w-full">
         {/* Singapore skyline background image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-no-repeat" 
@@ -76,10 +76,10 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="banner-overlay bg-transparent py-12 sm:py-16 md:py-24 w-full h-full flex items-center">
+        <div className="banner-overlay bg-transparent pt-24 pb-12 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
-              <motion.div className="mb-6 flex flex-col sm:flex-row items-center justify-center gap-2" variants={itemVariants}>
+              <motion.div className="mt-8 sm:mt-0 mb-6 flex flex-col sm:flex-row items-center justify-center gap-2" variants={itemVariants}>
                 <span className="text-sm font-medium text-red-100">Presented by</span>
                 <span className="text-sm font-bold bg-white/10 text-white px-4 py-2 rounded-full border border-white/20 backdrop-blur-sm">Mind Stretcher & Master Speakers</span>
               </motion.div>

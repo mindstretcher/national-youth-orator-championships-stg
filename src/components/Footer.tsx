@@ -80,7 +80,6 @@ const Footer = () => {
               <li><button onClick={() => document.getElementById('divisions')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Divisions</button></li>
               <li><button onClick={() => document.getElementById('timeline')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Timeline</button></li>
               <li><button onClick={() => document.getElementById('faq')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">FAQ</button></li>
-              <li><button onClick={() => document.getElementById('contact-info')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Register Now</button></li>
             </ul>
           </div>
           
