@@ -71,10 +71,10 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="banner-overlay bg-transparent pt-16 pb-12 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
+        <div className="banner-overlay bg-transparent pt-8 pb-10 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
-              <motion.div className="mt-4 sm:mt-0 mb-4 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
+              <motion.div className="mt-0 sm:mt-0 mb-3 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
                 <span className="text-sm font-medium text-white mr-2">In Support of</span>
                 <img src="/lovable-uploads/sg60-logo.png" alt="SG60 Logo" className="h-10 w-auto" />
               </motion.div>

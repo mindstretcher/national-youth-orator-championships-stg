@@ -73,7 +73,13 @@ const HowToJoin = () => {
               <p className="text-gray-600 text-sm">
                 {index === 0 ? (
                   <>
-                    Based on your <a href="#divisions" className="text-red-600 hover:underline">category</a>
+                    Based on your <a href="#" onClick={(e) => {
+                      e.preventDefault();
+                      const divisionsSection = document.getElementById('divisions');
+                      if (divisionsSection) {
+                        divisionsSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }} className="text-red-600 hover:underline">category</a>
                   </>
                 ) : (
                   step.description
