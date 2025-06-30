@@ -5,23 +5,23 @@ const WhyTakePart = () => {
   const benefits = [
     {
       icon: MessageSquare,
-      title: "Everyone gets feedback",
-      description: "Receive comments and suggestions on your speech."
+      title: "Sharpen speaking skills",
+      description: "Celebrate SG60 with your story and sharpen speaking skills"
     },
     {
       icon: Users,
-      title: "Finalists get mentored",
-      description: "Coaching by top Master Speakers coaches."
+      title: "Get mentored",
+      description: "Semi-finalists get mentored by top Master Speakers coaches"
     },
     {
       icon: Trophy,
       title: "Win national recognition",
-      description: "Awards, trophies, and a national platform."
+      description: "Awards, trophies, certificates and a national platform"
     },
     {
       icon: Video,
       title: "Be featured",
-      description: "Appear in our SG60 highlight reel: 'Voices of Youth SG60'"
+      description: "Appear in our SG60 highlight reel: 'Voices of SG60'"
     }
   ];
 
@@ -86,7 +86,7 @@ const WhyTakePart = () => {
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Personalised Feedback Report
+                Mentoring by top Master Speakers coaches (for semi-finalists)
               </li>
             </ul>
           </div>
@@ -99,15 +99,11 @@ const WhyTakePart = () => {
             <ul className="space-y-2 text-amber-700">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                Trophy or Finalist Certificate
+                Awards, Trophies & Finalist Certificates
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                Professional coaching session
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                Feature in "Voices of Youth SG60" video
+                Feature in "Voices of SG60" video
               </li>
             </ul>
           </div>

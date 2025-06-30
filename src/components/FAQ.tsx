@@ -15,10 +15,6 @@ const FAQ = () => {
       answer: "No. Each student may submit one entry only."
     },
     {
-      question: "Must I memorise my speech?",
-      answer: "Yes – all speeches must be memorised. Reading from notes or cue cards is not allowed as we believe good speakers can engage their audience without relying on written aids."
-    },
-    {
       question: "Can I use slides, props, pictures, or music in my video?",
       answer: "No – videos should be unedited and feature only your voice and presence. No slides, props, pictures, background music, or special effects are allowed as the speech is designed to be short and impactful, showcasing your natural speaking ability."
     },
@@ -28,11 +24,11 @@ const FAQ = () => {
     },
     {
       question: "What format should the video be in?",
-      answer: "Please submit in landscape orientation (MP4 preferred). Follow the time limits for your division and ensure your face is clearly visible with no background music or edits."
+      answer: "Please submit in landscape orientation (MP4 format). Follow the duration for your division and ensure your face is clearly visible with no background music or edits."
     },
     {
       question: "What should I wear in my video?",
-      answer: "Students should dress in their school uniform. University students should dress in smart casual attire."
+      answer: "Students should dress in their school uniform. University and Polytechnic students can dress in smart casual attire."
     }
   ];
 
@@ -48,7 +44,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-white py-16 w-full">
+    <section id="faq" className="bg-white py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* FAQ Section */}
         <motion.div

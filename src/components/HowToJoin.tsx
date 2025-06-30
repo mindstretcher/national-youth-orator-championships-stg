@@ -1,35 +1,37 @@
 
 import { motion } from "framer-motion";
-import { CheckCircle, Upload, Video, Calendar } from "lucide-react";
+import { CheckCircle, Upload, Video, Calendar, FileText, Clock } from "lucide-react";
 
 const HowToJoin = () => {
   const steps = [
     {
-      icon: Video,
-      title: "Choose your prompt",
-      description: "Based on your school level, choose 1 out of 3 prompts"
+      icon: FileText,
+      title: "Choose your theme",
+      description: "Based on your category, choose 1 out of 3 themes"
     },
     {
-      icon: Video,
+      icon: Clock,
       title: "Record your speech video",
-      description: "Follow time limits for your division"
+      description: "Follow the video duration for your category"
     },
     {
       icon: Upload,
       title: "Submit via our online form",
-      description: "Include your name, school, and selected category"
+      description: "Submit your video by 31 August 2025"
     }
   ];
 
   const recordingTips = [
-    "Film in landscape format",
-    "Ensure your face is clearly visible", 
-    "No background music or edits",
-    "Dress in School Uniform (for Uni students, smart casual)"
+    "Landscape orientation",
+    "MP4 format",
+    "Face & whole body of the speaker must be visible",
+    "No editing of the video is allowed (record as one continuous speech)",
+    "Dress in school uniform (for Uni & Poly students, dress in smart casual)",
+    "Use of notes or cue cards is strictly not allowed – good speakers can engage without written aids"
   ];
 
   return (
-    <section className="bg-gray-50 py-16 w-full">
+    <section id="how-to-join" className="bg-gray-50 py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-12"
@@ -44,7 +46,7 @@ const HowToJoin = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-8">
             <Calendar className="w-6 h-6 text-red-600" />
             <span className="text-lg sm:text-xl font-semibold text-red-700 text-center">
-              Deadline for submission: 1 August 2025
+              Deadline for submission: 31 August 2025
             </span>
           </div>
         </motion.div>
@@ -69,7 +71,13 @@ const HowToJoin = () => {
                 {step.title}
               </h3>
               <p className="text-gray-600 text-sm">
-                {step.description}
+                {index === 0 ? (
+                  <>
+                    Based on your <a href="#divisions" className="text-red-600 hover:underline">category</a>
+                  </>
+                ) : (
+                  step.description
+                )}
               </p>
             </motion.div>
           ))}
@@ -97,7 +105,7 @@ const HowToJoin = () => {
             </div>
             <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
               <p className="text-gray-700 text-center text-sm sm:text-base">
-                <span className="font-semibold text-yellow-800">Important:</span> All speeches must be memorised. Reading from notes or cue cards is not allowed as we believe good speakers can engage their audience without relying on written aids.
+                <span className="font-semibold text-yellow-800">Important:</span> Adhere to the video duration for your category.
               </p>
             </div>
           </div>

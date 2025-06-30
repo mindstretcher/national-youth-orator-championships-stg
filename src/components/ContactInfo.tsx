@@ -37,7 +37,9 @@ const ContactInfo = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">Call Us</h3>
             <a 
-              href="tel:+6588838004" 
+              href="https://wa.me/6588838004" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-red-100 hover:text-white transition-colors text-lg"
             >
               +65 8883 8004
@@ -45,16 +47,7 @@ const ContactInfo = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <span className="text-red-100 text-lg">Presented by:</span>
-            <div className="flex flex-col sm:flex-row items-center gap-2">
-              <span className="font-bold text-xl">Mind Stretcher</span>
-              <span className="text-red-100">&</span>
-              <span className="font-bold text-xl">Master Speakers</span>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

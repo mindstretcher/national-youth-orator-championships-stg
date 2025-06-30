@@ -2,10 +2,8 @@
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
 import WhyTakePart from '@/components/WhyTakePart';
-import WhoCanJoin from '@/components/WhoCanJoin';
 import HowToJoin from '@/components/HowToJoin';
 import Divisions from '@/components/Divisions';
-import ExplainerVideo from '@/components/ExplainerVideo';
 import OurJudges from '@/components/OurJudges';
 import Timeline from '@/components/Timeline';
 import FAQ from '@/components/FAQ';
@@ -24,12 +22,8 @@ const Index = () => {
       <div id="why-take-part">
         <WhyTakePart />
       </div>
-      <div id="who-can-join">
-        <WhoCanJoin />
-      </div>
       <HowToJoin />
       <Divisions />
-      <ExplainerVideo />
       <OurJudges />
       <Timeline />
       <div id="faq">

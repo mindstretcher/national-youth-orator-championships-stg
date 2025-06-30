@@ -30,17 +30,14 @@ const Navbar = () => {
       element.scrollIntoView({
         behavior: 'smooth'
       });
+      // Update URL with hash for direct linking
+      window.history.pushState(null, '', `/#${id}`);
     }
     setIsMenuOpen(false);
   };
 
-  const scrollToRegister = () => {
-    const contactSection = document.getElementById('contact-info');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+  const openRegistrationForm = () => {
+    window.open('https://sprw.io/stt-AySpU', '_blank');
     setIsMenuOpen(false);
   };
 
@@ -81,7 +78,7 @@ const Navbar = () => {
                 Why Take Part
               </button>
               <button 
-                onClick={() => scrollToSection('who-can-join')} 
+                onClick={() => scrollToSection('how-to-join')} 
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
                   isScrolled 
@@ -89,7 +86,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Who Can Join
+                How To Join
               </button>
               <button 
                 onClick={() => scrollToSection('divisions')} 
@@ -100,7 +97,18 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Divisions
+                Categories & Themes
+              </button>
+              <button 
+                onClick={() => scrollToSection('our-judges')} 
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
+                    : "text-white hover:text-red-100 hover:bg-red-700"
+                )}
+              >
+                Judges
               </button>
               <button 
                 onClick={() => scrollToSection('timeline')} 
@@ -125,9 +133,9 @@ const Navbar = () => {
                 FAQ
               </button>
               <button 
-                onClick={scrollToRegister}
+                onClick={openRegistrationForm}
                 className={cn(
-                  "px-4 py-2 rounded-md transition-colors font-medium",
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
                   isScrolled 
                     ? "bg-red-600 text-white hover:bg-red-700" 
                     : "bg-white text-red-600 hover:bg-red-50"
@@ -174,7 +182,7 @@ const Navbar = () => {
             Why Take Part
           </button>
           <button 
-            onClick={() => scrollToSection('who-can-join')} 
+            onClick={() => scrollToSection('how-to-join')} 
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
               isScrolled 
@@ -182,7 +190,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Who Can Join
+            How To Join
           </button>
           <button 
             onClick={() => scrollToSection('divisions')} 
@@ -193,7 +201,18 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Divisions
+            Categories & Themes
+          </button>
+          <button 
+            onClick={() => scrollToSection('our-judges')} 
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "text-gray-700 hover:bg-gray-50" 
+                : "text-white hover:bg-red-700"
+            )}
+          >
+            Judges
           </button>
           <button 
             onClick={() => scrollToSection('timeline')} 
@@ -218,7 +237,7 @@ const Navbar = () => {
             FAQ
           </button>
           <button 
-            onClick={scrollToRegister}
+            onClick={openRegistrationForm}
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
               isScrolled 

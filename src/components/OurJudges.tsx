@@ -5,32 +5,32 @@ import { Users, Award } from "lucide-react";
 const OurJudges = () => {
   const judges = [
     {
-      name: "Dr. Sarah Lim",
-      designation: "Distinguished Toastmaster",
-      description: "International speaking champion with 15+ years of experience in public speaking education.",
-      organization: "Toastmasters International",
-      image: "/placeholder.svg"
+      name: "Moses Soh",
+      title: "Deputy CEO",
+      organization: "Mind Stretcher",
+      description: "President's Scholar and Wharton graduate (Summa Cum Laude), Moses also holds a Master's in Finance from Princeton and a diploma in AI from Stanford. At Mind Stretcher, he leads innovation in education and mentors the next generation of confident thinkers and speakers.",
+      image: "/images/judges/moses.jpg"
     },
     {
-      name: "Mr. Raj Patel",
-      designation: "Senior Master Speaker",
-      description: "Award-winning educator specialising in youth communication development and oratory training.",
+      name: "Du Xuan",
+      title: "Deputy Senior State Counsel",
+      organization: "Attorney-General's Chambers",
+      description: "Xuan graduated with First Class Honours from Oxford and earned her Master's from Harvard Law. A former moot court competitor and public speaking mentor, she brings legal rigour and a passion for impactful advocacy.",
+      image: "/images/judges/du-xuan.jpg"
+    },
+    {
+      name: "Muhd Nurhakim",
+      title: "District Director (2024-2025)",
+      organization: "Toastmasters District 80",
+      description: "As District Director, Hakim leads Toastmasters across Singapore and Southeast Asia. With deep experience in public speaking and youth development, he is passionate about nurturing clear, confident communicators.",
+      image: "/images/judges/hakim.jpg"
+    },
+    {
+      name: "Alvin Kuek",
+      title: "Master Coach",
       organization: "Master Speakers",
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Ms. Jennifer Wong",
-      designation: "Education Specialist",
-      description: "MOE curriculum developer with expertise in language arts and student engagement strategies.",
-      organization: "Ministry of Education",
-      image: "/placeholder.svg"
-    },
-    {
-      name: "Mr. David Chen",
-      designation: "National Debate Coach",
-      description: "Experienced debate coach and mentor passionate about nurturing young voices and critical thinking.",
-      organization: "National Debate Singapore Team",
-      image: "/placeholder.svg"
+      description: "Alvin is an international speaking champion with over 10 years of coaching experience. Known for his energy and insight, he has guided hundreds of students to speak with confidence, clarity, and heart.",
+      image: "/images/judges/alvin.jpg"
     }
   ];
 
@@ -48,7 +48,7 @@ const OurJudges = () => {
             Our Judges
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            A distinguished panel of judges featuring top speakers from Master Speakers, Toastmasters & Singapore's National Debate Team.
+            A distinguished panel of judges featuring top speakers from Master Speakers, Mind Stretcher, AGC and Toastmasters International.
           </p>
         </motion.div>
         
@@ -62,21 +62,27 @@ const OurJudges = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="w-20 h-20 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-8 h-8 text-red-600" />
+              <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full border-2 border-red-100">
+                <img 
+                  src={judge.image} 
+                  alt={`${judge.name} - ${judge.title}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">
                 {judge.name}
               </h3>
-              <p className="text-red-600 font-medium text-sm mb-2">
-                {judge.designation}
-              </p>
+              <div className="mb-3">
+                <p className="text-red-600 font-medium text-sm">
+                  {judge.title}
+                </p>
+                <p className="text-gray-700 font-medium text-xs">
+                  {judge.organization}
+                </p>
+              </div>
               <p className="text-gray-600 text-sm mb-3 leading-relaxed">
                 {judge.description}
               </p>
-              <div className="text-xs text-gray-500 font-medium">
-                {judge.organization}
-              </div>
             </motion.div>
           ))}
         </div>

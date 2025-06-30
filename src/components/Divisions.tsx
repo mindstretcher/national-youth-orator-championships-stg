@@ -11,12 +11,11 @@ const Divisions = () => {
       id: "lower-primary",
       title: "Lower Primary (P1–P3)",
       icon: BookOpen,
-      description: "Simple expressions and basic storytelling",
       timeLimit: "1.5-2 minutes",
       criteria: [
-        "Clear voice and posture",
-        "Logical speech structure", 
-        "Expression and enthusiasm"
+        "Language & delivery",
+        "Content & relevance", 
+        "Personal voice & impact"
       ],
       themes: [
         { period: "Past", topic: "A story my grandparents told me about Singapore." },
@@ -28,14 +27,11 @@ const Divisions = () => {
       id: "upper-primary",
       title: "Upper Primary (P4–P6)",
       icon: Eye,
-      description: "Personal storytelling and reflection",
       timeLimit: "2-2.5 minutes",
       criteria: [
-        "Voice clarity and delivery",
-        "Confidence and body language",
-        "Clear structure (intro, body, conclusion)",
-        "Vocabulary and expression",
-        "Creativity"
+        "Language & delivery",
+        "Content & relevance", 
+        "Personal voice & impact"
       ],
       themes: [
         { period: "Past", topic: "The shoulders on which we stand." },
@@ -47,13 +43,11 @@ const Divisions = () => {
       id: "lower-secondary",
       title: "Lower Secondary (Sec 1–2)",
       icon: Clock,
-      description: "Personal opinions and thoughtful ideas",
       timeLimit: "2.5-3.5 minutes",
       criteria: [
-        "Content and structure",
-        "Clarity and expressiveness",
-        "Creativity and original point of view",
-        "Effective body language"
+        "Language & delivery",
+        "Content & relevance", 
+        "Personal voice & impact"
       ],
       themes: [
         { period: "Past", topic: "A lesson from Singapore's history we must not forget." },
@@ -63,16 +57,13 @@ const Divisions = () => {
     },
     {
       id: "upper-secondary",
-      title: "Sec 3 & Youth Open (JC, IB, Uni, Poly, ITE)",
+      title: "Upper Secondary & Youth Open (Sec 3-5, JC, IB, Uni, Poly, ITE)",
       icon: Lightbulb,
-      description: "Depth, conviction, and confidence",
       timeLimit: "2.5-3.5 minutes",
       criteria: [
-        "Insightful, relevant content",
-        "Persuasiveness and originality",
-        "Strong voice control and pace",
-        "Confident body language",
-        "Clear, impactful language"
+        "Language & delivery",
+        "Content & relevance", 
+        "Personal voice & impact"
       ],
       themes: [
         { period: "Past", topic: "We are who we are because of who they were." },
@@ -92,8 +83,7 @@ const Divisions = () => {
   };
 
   const handleDownloadRubrics = () => {
-    // Placeholder for download functionality
-    console.log("Download judging rubrics");
+    window.open('https://drive.google.com/file/d/1JizjCjMX4HweAF5OugCkWemwbEB0MMZw/view?usp=sharing', '_blank');
   };
 
   return (
@@ -107,10 +97,10 @@ const Divisions = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Speech Themes & Judging Criteria
+            Categories & Themes
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Explore themes in your category that connect Singapore's past, present, and future.
+            Open to students from Primary to University levels. Explore themes that connect Singapore's past, present and future.
           </p>
           <Button 
             onClick={handleDownloadRubrics}
@@ -142,8 +132,7 @@ const Divisions = () => {
                     </div>
                     <div className="text-left">
                       <h3 className="text-xl font-bold text-gray-900">{division.title}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{division.description}</p>
-                      <p className="text-sm font-medium text-red-600 mt-1">Time limit: {division.timeLimit}</p>
+                      <p className="text-sm font-medium text-red-600 mt-1">Duration: {division.timeLimit}</p>
                     </div>
                   </div>
                 </AccordionTrigger>
@@ -152,6 +141,7 @@ const Divisions = () => {
                     {/* Speech Themes */}
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">Speech Themes</h4>
+                      <p className="text-gray-700 mb-4">Please choose 1 out of the 3 themes below for your speech:</p>
                       <div className="space-y-4">
                         {division.themes.map((theme, themeIndex) => (
                           <div key={themeIndex} className="bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
