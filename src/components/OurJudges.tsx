@@ -8,28 +8,28 @@ const OurJudges = () => {
       name: "Moses Soh",
       title: "Deputy CEO",
       organization: "Mind Stretcher",
-      description: "President's Scholar and Wharton graduate (Summa Cum Laude), Moses also holds a Master's in Finance from Princeton and a diploma in AI from Stanford. At Mind Stretcher, he leads innovation in education and mentors the next generation of confident thinkers and speakers.",
+      description: "A 2012 Singapore President’s Scholar, MAS Overseas Scholar, and Wharton graduate (Summa Cum Laude), Moses also holds a Master’s in Finance from Princeton and a diploma in AI from Stanford. An ex-RI debater and gold medal winner at the SAGE World Championships, he now leads educational innovation at Mind Stretcher. At NYOC 2025, he brings intellectual rigour and a passion for shaping future-ready youth leaders.",
       image: "/images/judges/moses.jpg"
-    },
-    {
-      name: "Du Xuan",
-      title: "Deputy Senior State Counsel",
-      organization: "Attorney-General's Chambers",
-      description: "Xuan graduated with First Class Honours from Oxford and earned her Master's from Harvard Law. A former moot court competitor and public speaking mentor, she brings legal rigour and a passion for impactful advocacy.",
-      image: "/images/judges/du-xuan.jpg"
     },
     {
       name: "Muhd Nurhakim",
       title: "District Director (2024-2025)",
       organization: "Toastmasters District 80",
-      description: "As District Director, Hakim leads Toastmasters across Singapore and Southeast Asia. With deep experience in public speaking and youth development, he is passionate about nurturing clear, confident communicators.",
+      description: "As District Director, Hakim leads Toastmasters clubs across Singapore, supporting a vibrant community of speakers and leaders. A seasoned speaker and youth mentor, he is deeply committed to nurturing clarity, confidence, and purpose in communication. At NYOC 2025, he brings adjudication rigour, calm authority, and a passion for empowering the next generation of voices.",
       image: "/images/judges/hakim.jpg"
     },
     {
+      name: "Du Xuan",
+      title: "Lawyer",
+      organization: "Harvard & Oxford Alumna",
+      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor and Oxford Union debater, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
+      image: "/images/judges/du-xuan.jpg"
+    },
+    {
       name: "Alvin Kuek",
-      title: "Master Coach",
+      title: "Lead Coach",
       organization: "Master Speakers",
-      description: "Alvin is an international speaking champion with over 10 years of coaching experience. Known for his energy and insight, he has guided hundreds of students to speak with confidence, clarity, and heart.",
+      description: "A former Raffles Institution, Raffles Junior College and University scholar, Alvin is a highly respected public speaking coach with over 20 years of experience. A multiple-time speech contest winner and animated speaker himself, he has trained thousands of students – many of whom became champions and confident communicators. At NYOC 2025, he brings deep expertise, sharp mentorship, and an unwavering belief in youth voice.",
       image: "/images/judges/alvin.jpg"
     }
   ];
@@ -48,7 +48,7 @@ const OurJudges = () => {
             Our Judges
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            A distinguished panel of judges featuring top speakers from Master Speakers, Mind Stretcher, AGC and Toastmasters International.
+          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals — including Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
           </p>
         </motion.div>
         

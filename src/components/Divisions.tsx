@@ -9,7 +9,7 @@ const Divisions = () => {
   const divisions = [
     {
       id: "lower-primary",
-      title: "Lower Primary (P1–P3)",
+      title: "Lower Primary (Pri 1–3)",
       icon: BookOpen,
       timeLimit: "1.5-2 minutes",
       criteria: [
@@ -25,7 +25,7 @@ const Divisions = () => {
     },
     {
       id: "upper-primary",
-      title: "Upper Primary (P4–P6)",
+      title: "Upper Primary (Pri 4–6)",
       icon: Eye,
       timeLimit: "2-2.5 minutes",
       criteria: [

@@ -54,12 +54,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-14 md:h-16">
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <h1 className={cn(
-                "text-2xl font-bold transition-colors",
-                isScrolled ? "text-red-600" : "text-white"
-              )}>
-                NYOC 2025
-              </h1>
+              <a href="https://www.nyoc.sg/" className="hover:opacity-90 transition-opacity">
+                <h1 className={cn(
+                  "text-2xl font-bold transition-colors",
+                  isScrolled ? "text-red-600" : "text-white"
+                )}>
+                  NYOC 2025
+                </h1>
+              </a>
             </div>
           </div>
           

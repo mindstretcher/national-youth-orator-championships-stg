@@ -71,35 +71,35 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="banner-overlay bg-transparent pt-8 pb-10 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
+        <div className="banner-overlay bg-transparent pt-4 pb-10 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
-              <motion.div className="mt-0 sm:mt-0 mb-3 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
+              <motion.div className="mt-0 sm:mt-0 mb-2 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
                 <span className="text-sm font-medium text-white mr-2">In Support of</span>
                 <img src="/lovable-uploads/sg60-logo.png" alt="SG60 Logo" className="h-10 w-auto" />
               </motion.div>
               
-              <motion.h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 leading-tight px-2" variants={itemVariants}>
+              <motion.h1 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 leading-tight px-2" variants={itemVariants}>
                 National Youth Orator Championships 2025
               </motion.h1>
               
               <motion.div className="mb-3" variants={itemVariants}>
-                <h2 className="text-white text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3">
+                <h2 className="text-white text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3">
                   SG60 Edition: My Singapore
                 </h2>
                 <div className="flex flex-col gap-2 text-white mt-2">
-                  <div className="flex items-center justify-center text-sm sm:text-base">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  <div className="flex items-center justify-center text-base sm:text-base">
+                    <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
                     <span className="font-medium">Submission Deadline: 31 August 2025</span>
                   </div>
-                  <div className="flex items-center justify-center text-sm sm:text-base">
-                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  <div className="flex items-center justify-center text-base sm:text-base">
+                    <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
                     <span className="font-medium">Primary to University students</span>
                   </div>
                 </div>
               </motion.div>
               
-              <motion.p className="text-white text-sm sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto mb-4 font-light px-2" variants={itemVariants}>
+              <motion.p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto mb-4 font-light px-2" variants={itemVariants}>
                 A national platform to empower the youths of our next generation — to become confident communicators, bold critical thinkers, and leaders who speak with clarity and conviction.
               </motion.p>
               
@@ -143,7 +143,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
         <motion.div className="mt-3 mb-4 sm:mt-4 sm:mb-6 bg-white rounded-2xl shadow-xl p-3 sm:p-6 md:p-8 max-w-4xl mx-auto border-t-4 border-red-600" variants={containerVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }}>
           <motion.p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed text-center" variants={itemVariants}>
-            In this SG60 Edition, students across Singapore are invited to take the stage and speak from the heart. From stories of the past to hopes for the future, participants will deliver a speech on the theme <span className="font-bold text-red-700">"My Singapore"</span> — reflecting on what the nation means to them.
+          In this SG60 Edition, NYOC 2025 invites students from Primary to University levels to take the stage and speak from the heart. On the theme <span className="font-bold text-red-700">"My Singapore"</span>, students will reflect on our nation’s past, share what it means to be Singaporean today, and voice their hopes for the future.
           </motion.p>
         </motion.div>
       </div>

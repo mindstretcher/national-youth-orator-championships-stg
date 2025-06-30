@@ -22,7 +22,7 @@ const Timeline = () => {
       isKeyDate: true
     },
     {
-      milestone: "Semi-Finalists Announcement",
+      milestone: "Announcement of Semi-Finalists",
       date: "4 September 2025",
       icon: Users,
       category: "semi",
@@ -46,7 +46,7 @@ const Timeline = () => {
       isKeyDate: true
     },
     {
-      milestone: "Finalists Announcement",
+      milestone: "Announcement of Finalists",
       date: "12 November 2025",
       icon: Users,
       category: "finals",

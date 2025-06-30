@@ -82,11 +82,11 @@ const WhyTakePart = () => {
             <ul className="space-y-2 text-blue-700">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Certificate of Participation
+                Certificate of Achievement
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Mentoring by top Master Speakers coaches (for semi-finalists)
+                Some may be featured in our "Voices of SG60" highlight reel
               </li>
             </ul>
           </div>
@@ -94,16 +94,16 @@ const WhyTakePart = () => {
           <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
             <div className="flex items-center mb-4">
               <Award className="w-8 h-8 text-amber-600 mr-3" />
-              <h3 className="text-xl font-bold text-amber-800">Finalists Will Receive</h3>
+              <h3 className="text-xl font-bold text-amber-800">Semi-Finalists & Finalists Receive</h3>
             </div>
             <ul className="space-y-2 text-amber-700">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                Awards, Trophies & Finalist Certificates
+                Coaching by top Master Speakers coaches
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-amber-400 rounded-full mr-3"></span>
-                Feature in "Voices of SG60" video
+                Awards, Trophies & Finalist Certificates
               </li>
             </ul>
           </div>
