@@ -54,14 +54,19 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-14 md:h-16">
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <a href="https://www.nyoc.sg/" className="hover:opacity-90 transition-opacity">
+              <button 
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }} 
+                className="hover:opacity-90 transition-opacity"
+              >
                 <h1 className={cn(
                   "text-2xl font-bold transition-colors",
                   isScrolled ? "text-red-600" : "text-white"
                 )}>
                   NYOC 2025
                 </h1>
-              </a>
+              </button>
             </div>
           </div>
           

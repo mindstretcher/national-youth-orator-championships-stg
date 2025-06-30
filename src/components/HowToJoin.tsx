@@ -111,7 +111,15 @@ const HowToJoin = () => {
             </div>
             <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
               <p className="text-gray-700 text-center text-sm sm:text-base">
-                <span className="font-semibold text-yellow-800">Important:</span> Adhere to the <a href="https://www.nyoc.sg/#divisions" className="text-red-600 hover:underline">video duration</a> for your category.
+                <span className="font-semibold text-yellow-800">Important:</span> Adhere to the <a href="#divisions" onClick={(e) => {
+                  e.preventDefault();
+                  const divisionsSection = document.getElementById('divisions');
+                  if (divisionsSection) {
+                    const yOffset = -80; // Adjust for header height
+                    const y = divisionsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({top: y, behavior: 'smooth'});
+                  }
+                }} className="text-red-600 hover:underline">video duration</a> for your category.
               </p>
             </div>
           </div>

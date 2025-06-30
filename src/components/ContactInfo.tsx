@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 
 const ContactInfo = () => {
   return (
@@ -33,9 +33,9 @@ const ContactInfo = () => {
           {/* Phone Contact */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20">
             <div className="w-16 h-16 bg-white/20 flex items-center justify-center rounded-full mx-auto mb-4">
-              <Phone className="w-8 h-8 text-white" />
+              <MessageCircle className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Call Us</h3>
+            <h3 className="text-xl font-bold mb-2">WhatsApp Us</h3>
             <a 
               href="https://wa.me/6588838004" 
               target="_blank"
