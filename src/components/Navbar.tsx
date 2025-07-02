@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   const openRegistrationForm = () => {
-    window.open('https://sprw.io/stt-AySpU', '_blank');
+    window.open('https://forms.gle/XSuzJ3eyVqQT6viG7', '_blank');
     setIsMenuOpen(false);
   };
 
