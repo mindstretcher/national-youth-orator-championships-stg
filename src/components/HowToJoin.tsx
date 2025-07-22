@@ -17,13 +17,22 @@ const HowToJoin = () => {
     {
       icon: Upload,
       title: "Submit via our online form",
-      description: "Submit your video by 31 August 2025"
+      description: <>Submit your video by <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6TwIjOpMt5LksMbTtelSnfi0UBPN6Gp8lLnvT4mVz6awIdA/viewform" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">31 August 2025</a></>
     }
   ];
 
   const recordingTips = [
-    "Landscape orientation",
-    "MP4 format",
+    <>Adhere to the <a href="#divisions" onClick={(e) => {
+      e.preventDefault();
+      const divisionsSection = document.getElementById('divisions');
+      if (divisionsSection) {
+        const yOffset = -80; // Adjust for header height
+        const y = divisionsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    }} className="text-red-600 hover:underline">video duration</a> for your category</>,
+    "Record in landscape orientation",
+    "Submit your video in MP4 format",
     "Face & whole body of the speaker must be visible",
     "No editing of the video is allowed (record as one continuous speech)",
     "Dress in school uniform (for Uni & Poly students, dress in smart casual)",
@@ -98,7 +107,7 @@ const HowToJoin = () => {
         >
           <div className="text-center mb-6">
             <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-            <h3 className="text-xl font-semibold text-green-800 mb-4">Recording Tips</h3>
+            <h3 className="text-xl font-semibold text-green-800 mb-4">Video Recording Guidelines</h3>
           </div>
           <div className="max-w-2xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -110,17 +119,12 @@ const HowToJoin = () => {
               ))}
             </div>
             <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-              <p className="text-gray-700 text-center text-sm sm:text-base">
-                <span className="font-semibold text-yellow-800">Important:</span> Adhere to the <a href="#divisions" onClick={(e) => {
-                  e.preventDefault();
-                  const divisionsSection = document.getElementById('divisions');
-                  if (divisionsSection) {
-                    const yOffset = -80; // Adjust for header height
-                    const y = divisionsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({top: y, behavior: 'smooth'});
-                  }
-                }} className="text-red-600 hover:underline">video duration</a> for your category.
-              </p>
+              <h4 className="text-lg font-semibold text-yellow-800 mb-3 text-center">Submitting your Video in our Online Form</h4>
+              <ol className="list-decimal pl-6 space-y-2 text-gray-700">
+                <li>Upload your video to Google Drive, OneDrive or Dropbox</li>
+                <li>Make sure your sharing settings allow "Anyone with the link to view"</li>
+                <li>Share the link in our <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6TwIjOpMt5LksMbTtelSnfi0UBPN6Gp8lLnvT4mVz6awIdA/viewform" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">online form</a></li>
+              </ol>
             </div>
           </div>
         </motion.div>

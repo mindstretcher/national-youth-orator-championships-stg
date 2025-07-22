@@ -11,6 +11,10 @@ import {
 const FAQ = () => {
   const faqs = [
     {
+      question: "How do I know which category to join?",
+      answer: "You should choose your category based on your current school level, not your age. For example, if you are in Secondary 2, even if you're 15 years old, you should join the Lower Secondary category."
+    },
+    {
       question: "Can I submit more than one video?",
       answer: "No. Each student may submit one entry only."
     },

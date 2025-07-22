@@ -8,6 +8,7 @@ import OurJudges from '@/components/OurJudges';
 import Timeline from '@/components/Timeline';
 import FAQ from '@/components/FAQ';
 import SEO from '@/components/SEO';
+import ExplainerVideo from '@/components/ExplainerVideo';
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -74,6 +75,7 @@ const Index = () => {
       <div id="divisions">
         <Divisions />
       </div>
+      <ExplainerVideo />
       <div id="our-judges">
         <OurJudges />
       </div>

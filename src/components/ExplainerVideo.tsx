@@ -1,17 +1,40 @@
 
 import { motion } from "framer-motion";
-import { Play, Users } from "lucide-react";
-import { useState } from "react";
+import { Users } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 const ExplainerVideo = () => {
-  const [showVideo, setShowVideo] = useState(false);
-  
-  const handlePlayVideo = () => {
-    setShowVideo(true);
-  };
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(error => {
+            console.error("Autoplay failed:", error);
+          });
+        } else if (!entry.isIntersecting && videoRef.current) {
+          videoRef.current.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <section className="bg-white py-16 w-full">
+    <section ref={sectionRef} className="bg-white py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-12"
@@ -36,34 +59,23 @@ const ExplainerVideo = () => {
           viewport={{ once: true }}
         >
           <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl">
-            {!showVideo ? (
-              <>
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button 
-                    onClick={handlePlayVideo}
-                    className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110 group"
-                  >
-                    <Play className="w-8 h-8 text-red-600 ml-1 group-hover:text-red-700" />
-                  </button>
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center text-white">
-                    <Users className="w-5 h-5 mr-2" />
-                    <span className="text-sm font-medium">Presented by Master Speakers</span>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/29b2WQWPEQs?autoplay=1"
-                title="What Makes a Great Speech?"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            )}
+            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              src="https://nyoc-sg.sgp1.cdn.digitaloceanspaces.com/2025_NYOC_draft02-1-render.mp4"
+              title="What Makes a Great Speech?"
+              controls
+              playsInline
+              muted
+              loop
+            ></video>
+            <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
+              <div className="flex items-center text-white">
+                <Users className="w-5 h-5 mr-2" />
+                <span className="text-sm font-medium">Presented by Master Speakers</span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
