@@ -17,21 +17,21 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'WRLDS',
-  description = 'WRLDS Technologies: Pioneering smart engineering solutions with textile sensors for sports, safety, and performance monitoring.',
+  title = 'National Youth Orator Championships 2025 - SG60 Edition',
+  description = "A national platform empowering Singapore's youth to become confident communicators. Join the SG60 Edition: My Singapore.",
   type = 'website',
-  name = 'WRLDS Technologies',
-  imageUrl = '/lovable-uploads/48ecf6e2-5a98-4a9d-af6f-ae2265cd4098.png',
+  name = 'National Youth Orator Championships',
+  imageUrl = '/images/preview-link-image.png',
   publishDate,
   modifiedDate,
   author,
   category,
-  keywords = ['smart textiles', 'wearable technology', 'textile sensors', 'sports tech', 'safety monitoring', 'performance analytics'],
+  keywords = ['national youth orator championships', 'NYOC 2025', 'SG60 speech competition', 'youth public speaking singapore', 'student speech contest', 'oratorical competition Singapore', 'public speaking for students', 'My Singapore speech'],
   isBlogPost = false
 }) => {
   const location = useLocation();
-  const currentUrl = `https://wrlds.com${location.pathname}`;
-  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://wrlds.com${imageUrl}`;
+  const currentUrl = `https://www.nyoc.sg${location.pathname}`;
+  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.nyoc.sg${imageUrl}`;
 
   // Enhanced keywords for specific posts
   const enhancedKeywords = location.pathname.includes('smart-ppe-revolution') 
@@ -71,19 +71,19 @@ const SEO: React.FC<SEOProps> = ({
   const organizationStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'WRLDS Technologies',
-    url: 'https://wrlds.com',
-    logo: 'https://wrlds.com/lovable-uploads/14ea3fe0-19d6-425c-b95b-4117bc41f3ca.png',
-    description: 'Pioneering smart engineering solutions with textile sensors',
+    name: 'National Youth Orator Championships',
+    url: 'https://www.nyoc.sg',
+    logo: 'https://www.nyoc.sg/lovable-uploads/nyoc logo.png',
+    description: 'Singapore\'s premier youth public speaking competition in celebration of SG60.',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'info@wrlds.com'
+      email: 'nyoc@mindstretcher,com'
     },
-    sameAs: [
-      'https://www.linkedin.com/company/wrlds-technologies',
-      'https://twitter.com/wrldstechnologies'
-    ]
+    // sameAs: [
+    //   'https://www.linkedin.com/company/wrlds-technologies',
+    //   'https://twitter.com/wrldstechnologies'
+    // ]
   };
 
   // Enhanced BlogPosting JSON-LD structured data
@@ -211,12 +211,12 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={absoluteImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="WRLDS Technologies" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content="National Youth Orator Championships" />
+      <meta property="og:locale" content="en_SG" />
       {isBlogPost && category && <meta property="article:section" content={category} />}
       {isBlogPost && publishDate && <meta property="article:published_time" content={publishDate} />}
       {isBlogPost && modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
-      {isBlogPost && <meta property="article:publisher" content="https://wrlds.com" />}
+      {isBlogPost && <meta property="article:publisher" content="https://www.nyoc.sg" />} {/* Custom domain */}
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -224,8 +224,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={absoluteImageUrl} />
-      <meta name="twitter:site" content="@wrldstechnologies" />
-      <meta name="twitter:creator" content="@wrldstechnologies" />
+      {/* <meta name="twitter:site" content="@nyocsg" />
+      <meta name="twitter:creator" content="@nyocsg" /> */}
       
       {/* LinkedIn specific */}
       <meta property="og:image:secure_url" content={absoluteImageUrl} />
@@ -236,15 +236,15 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="pinterest:image" content={absoluteImageUrl} />
       
       {/* Additional SEO meta tags */}
-      <meta name="theme-color" content="#000000" />
-      <meta name="msapplication-TileColor" content="#000000" />
+      {/* <meta name="theme-color" content="#000000" />
+      <meta name="msapplication-TileColor" content="#000000" /> */}
       
       {/* JSON-LD structured data */}
       <script type="application/ld+json">
         {JSON.stringify(organizationStructuredData)}
       </script>
       
-      {blogPostStructuredData && (
+      {/* {blogPostStructuredData && (
         <script type="application/ld+json">
           {JSON.stringify(blogPostStructuredData)}
         </script>
@@ -260,7 +260,7 @@ const SEO: React.FC<SEOProps> = ({
         <script type="application/ld+json">
           {JSON.stringify(wearableSafetyROIFAQData)}
         </script>
-      )}
+      )} */}
     </Helmet>
   );
 };

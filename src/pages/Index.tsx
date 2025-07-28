@@ -75,7 +75,9 @@ const Index = () => {
       <div id="divisions">
         <Divisions />
       </div>
-      <ExplainerVideo />
+      <div id="tips">
+        <ExplainerVideo />
+      </div>
       <div id="our-judges">
         <OurJudges />
       </div>
