@@ -2,9 +2,11 @@
 import { ArrowRight, Calendar, Users } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -36,6 +38,25 @@ const Hero = () => {
     e.preventDefault();
     window.open('https://forms.gle/XSuzJ3eyVqQT6viG7', '_blank');
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            videoRef.current.play();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   
   return (
     <motion.div className="relative w-full pt-14" initial="hidden" animate="visible" variants={containerVariants}>
@@ -130,6 +151,46 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Launch Video Section */}
+      <motion.div 
+        className="relative z-10 w-full bg-gray-50 py-8 md:py-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <motion.h3 
+              className="text-center text-gray-800 font-bold text-xl md:text-2xl mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              Watch the NYOC 2025 Launch Video
+            </motion.h3>
+            
+            <motion.div 
+              className="relative rounded-xl overflow-hidden shadow-xl bg-white p-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+            >
+              <video
+                ref={videoRef}
+                className="w-full h-auto rounded-lg"
+                controls
+                muted
+                playsInline
+                poster="/images/singapore-skyline-red.png"
+              >
+                <source src="https://nyoc-sg.sgp1.cdn.digitaloceanspaces.com/2025_NYOC%20promo_16-9_draft01.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
       
       {/* Partners horizontal strip */}
       <div className="relative z-10 w-full bg-white shadow-md py-6 md:py-8 border-t border-gray-200">
