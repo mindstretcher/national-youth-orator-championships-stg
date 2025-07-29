@@ -134,31 +134,35 @@ const Hero = () => {
       {/* Partners horizontal strip */}
       <div className="relative z-10 w-full bg-white shadow-md py-6 md:py-8 border-t border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-center text-gray-800 font-semibold text-lg md:text-xl mb-5">Organiser & Supporting Partners</h3>
+          <h3 className="text-center text-gray-800 font-semibold text-lg md:text-xl mb-6">Organiser & Supporting Partners</h3>
           
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
-                <img src="/images/msp-logo.png" alt="Master Speakers Logo" className="h-8 md:h-10 w-auto object-contain" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-24 h-16 md:w-28 md:h-18 bg-white rounded-lg p-3 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+                <img src="/images/msp-logo.png" alt="Master Speakers Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <div className="text-center">
-                <span className="text-gray-800 font-bold text-sm md:text-base">Master Speakers</span>
-                <span className="text-gray-500 text-xs md:text-sm block">(Organiser)</span>
+              <div className="text-center min-h-[3rem] flex flex-col justify-center">
+                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Master Speakers</span>
+                <span className="text-gray-500 text-xs md:text-sm">(Organiser)</span>
               </div>
             </a>
             
-            <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
-                <img src="/images/ms-logo.png" alt="Mind Stretcher Logo" className="h-8 md:h-10 w-auto object-contain" />
+            <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-24 h-16 md:w-28 md:h-18 bg-white rounded-lg p-3 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+                <img src="/images/ms-logo.png" alt="Mind Stretcher Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <span className="text-gray-800 font-bold text-sm md:text-base">Mind Stretcher</span>
+              <div className="text-center min-h-[3rem] flex flex-col justify-center">
+                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Mind Stretcher</span>
+              </div>
             </a>
             
-            <a href="https://www.goodenglish.org.sg" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
-              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
-                <img src="/images/sgem-logo.png" alt="Speak Good English Movement Logo" className="h-8 md:h-10 w-auto object-contain" />
+            <a href="https://www.goodenglish.org.sg" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-24 h-16 md:w-28 md:h-18 bg-white rounded-lg p-3 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+                <img src="/images/sgem-logo.png" alt="Speak Good English Movement Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <span className="text-gray-800 font-bold text-sm md:text-base">Speak Good English Movement</span>
+              <div className="text-center min-h-[3rem] flex flex-col justify-center">
+                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Speak Good English Movement</span>
+              </div>
             </a>
           </div>
         </div>
