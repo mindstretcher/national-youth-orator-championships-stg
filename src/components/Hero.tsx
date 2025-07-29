@@ -125,17 +125,41 @@ const Hero = () => {
                 </button>
               </motion.div>
               
-              <motion.div className="mt-4 flex flex-col items-center justify-center gap-2" variants={itemVariants}>
-                <div className="flex flex-row items-center justify-center">
-                  <span className="text-sm font-medium text-white mr-2">Organised by</span>
-                  <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-red-100 transition-colors underline">Master Speakers</a>
-                </div>
-                <div className="flex flex-row items-center justify-center">
-                  <span className="text-sm font-medium text-white mr-2">Supported by</span>
-                  <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-red-100 transition-colors underline">Mind Stretcher</a>
-                </div>
-              </motion.div>
+              {/* Partners moved to horizontal strip below hero section */}
             </motion.div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Partners horizontal strip */}
+      <div className="relative z-10 w-full bg-white shadow-md py-6 md:py-8 border-t border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-center text-gray-800 font-semibold text-lg md:text-xl mb-5">Organiser & Supporting Partners</h3>
+          
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
+                <img src="/images/msp-logo.png" alt="Master Speakers Logo" className="h-8 md:h-10 w-auto object-contain" />
+              </div>
+              <div className="text-center">
+                <span className="text-gray-800 font-bold text-sm md:text-base">Master Speakers</span>
+                <span className="text-gray-500 text-xs md:text-sm block">(Organiser)</span>
+              </div>
+            </a>
+            
+            <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
+                <img src="/images/ms-logo.png" alt="Mind Stretcher Logo" className="h-8 md:h-10 w-auto object-contain" />
+              </div>
+              <span className="text-gray-800 font-bold text-sm md:text-base">Mind Stretcher</span>
+            </a>
+            
+            <a href="https://www.goodenglish.org.sg" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:opacity-90 transition-opacity">
+              <div className="bg-white rounded-md p-2 flex items-center justify-center border border-gray-100 shadow-sm">
+                <img src="/images/sgem-logo.png" alt="Speak Good English Movement Logo" className="h-8 md:h-10 w-auto object-contain" />
+              </div>
+              <span className="text-gray-800 font-bold text-sm md:text-base">Speak Good English Movement</span>
+            </a>
           </div>
         </div>
       </div>
