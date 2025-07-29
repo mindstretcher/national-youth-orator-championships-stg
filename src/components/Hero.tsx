@@ -136,32 +136,32 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center text-gray-800 font-semibold text-lg md:text-xl mb-6">Organiser & Supporting Partners</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6 max-w-3xl mx-auto">
-            <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
-              <div className="w-28 h-20 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+          <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
+            <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
                 <img src="/images/msp-logo.png" alt="Master Speakers Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <div className="text-center h-12 flex flex-col justify-start">
-                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Master Speakers</span>
+              <div className="text-center h-10 md:h-12 flex flex-col justify-start">
+                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Master Speakers</span>
                 <span className="text-gray-500 text-xs md:text-sm">(Organiser)</span>
               </div>
             </a>
             
-            <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
-              <div className="w-28 h-20 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+            <a href="https://www.mindstretcher.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
                 <img src="/images/ms-logo.png" alt="Mind Stretcher Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <div className="text-center h-12 flex flex-col justify-start">
-                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Mind Stretcher</span>
+              <div className="text-center h-10 md:h-12 flex flex-col justify-start">
+                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Mind Stretcher</span>
               </div>
             </a>
             
-            <a href="https://www.goodenglish.org.sg" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 hover:opacity-90 transition-opacity group">
-              <div className="w-28 h-20 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+            <a href="https://www.goodenglish.org.sg" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
                 <img src="/images/sgem-logo.png" alt="Speak Good English Movement Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
-              <div className="text-center h-12 flex flex-col justify-start">
-                <span className="text-gray-800 font-bold text-sm md:text-base leading-tight">Speak Good English<br />Movement</span>
+              <div className="text-center h-10 md:h-12 flex flex-col justify-start">
+                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Speak Good English<br />Movement</span>
               </div>
             </a>
           </div>
