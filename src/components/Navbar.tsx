@@ -71,7 +71,7 @@ const Navbar = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button 
                 onClick={() => scrollToSection('why-take-part')} 
@@ -165,7 +165,7 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button 
               onClick={toggleMenu} 
               className={cn(
@@ -181,7 +181,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <div className={cn(
-        "lg:hidden transition-all duration-300 overflow-hidden w-full",
+        "xl:hidden transition-all duration-300 overflow-hidden w-full",
         isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
       )}>
         <div className={cn(
