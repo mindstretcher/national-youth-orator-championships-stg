@@ -5,11 +5,11 @@ import { Users, Award } from "lucide-react";
 const OurJudges = () => {
   const judges = [
     {
-      name: "Moses Soh",
-      title: "Deputy CEO",
-      organization: "Mind Stretcher",
-      description: "A 2012 Singapore President’s Scholar, MAS Overseas Scholar, and Wharton graduate (Summa Cum Laude), Moses also holds a Master’s in Finance from Princeton and a diploma in AI from Stanford. An ex-RI debater and gold medal winner at the SAGE World Championships, he now leads educational innovation at Mind Stretcher. At NYOC 2025, he brings intellectual rigour and a passion for shaping future-ready youth leaders.",
-      image: "/images/judges/moses.jpg"
+      name: "Mary Ann Tear",
+      title: "Master Trainer",
+      organization: "Trinity College London",
+      description: "An esteemed drama and communication educator, Mary Ann has championed public speaking and speech & drama education for over 30 years across Singapore, Southeast Asia, and the UK. As a Master Trainer with Trinity College London, she has trained teachers, developed curriculum, and adjudicated countless performances and assessments. At NYOC 2025, she brings global perspective, expert adjudication, and a deep commitment to nurturing expressive, confident communicators.",
+      image: "/images/judges/mary-ann.jpg"
     },
     {
       name: "Muhd Nurhakim",
@@ -17,6 +17,13 @@ const OurJudges = () => {
       organization: "Toastmasters District 80",
       description: "As District Director, Hakim leads Toastmasters clubs across Singapore, supporting a vibrant community of speakers and leaders. A seasoned speaker and youth mentor, he is deeply committed to nurturing clarity, confidence, and purpose in communication. At NYOC 2025, he brings adjudication rigour, calm authority, and a passion for empowering the next generation of voices.",
       image: "/images/judges/hakim.jpg"
+    },
+    {
+      name: "Moses Soh",
+      title: "Deputy CEO",
+      organization: "Mind Stretcher",
+      description: "A 2012 Singapore President’s Scholar, MAS Overseas Scholar, and Wharton graduate (Summa Cum Laude), Moses also holds a Master’s in Finance from Princeton and a diploma in AI from Stanford. An ex-RI debater and gold medal winner at the SAGE World Championships, he now leads educational innovation at Mind Stretcher. At NYOC 2025, he brings intellectual rigour and a passion for shaping future-ready youth leaders.",
+      image: "/images/judges/moses.jpg"
     },
     {
       name: "Du Xuan",
@@ -52,11 +59,11 @@ const OurJudges = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
           {judges.map((judge, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-md transition-all duration-300 border border-gray-100"
+              className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-md transition-all duration-300 border border-gray-100 w-full sm:w-[calc(100%-1.5rem)] md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
