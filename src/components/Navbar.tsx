@@ -150,7 +150,7 @@ const Navbar = () => {
               >
                 FAQ
               </button>
-              <button 
+              <button                 
                 onClick={openRegistrationForm}
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-colors",
