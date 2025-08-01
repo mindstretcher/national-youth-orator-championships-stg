@@ -6,9 +6,9 @@ const OurJudges = () => {
   const judges = [
     {
       name: "Mary Ann Tear",
-      title: "Master Trainer",
+      title: "Senior Examiner & Consultant",
       organization: "Trinity College London",
-      description: "An esteemed drama and communication educator, Mary Ann has championed public speaking and speech & drama education for over 30 years across Singapore, Southeast Asia, and the UK. As a Master Trainer with Trinity College London, she has trained teachers, developed curriculum, and adjudicated countless performances and assessments. At NYOC 2025, she brings global perspective, expert adjudication, and a deep commitment to nurturing expressive, confident communicators.",
+      description: "A leading figure in speech and drama education, Mary Ann has over 30 years of experience across Singapore, Southeast Asia, and the UK. As a Senior Examiner and Consultant with Trinity College London, she has trained educators, shaped curriculum, and adjudicated performances worldwide. A passionate advocate for public speaking, she also served as voice coach to Singapore’s World Schools Debating Champions in 2015. At NYOC 2025, she brings global insight, adjudication expertise, and a deep belief in empowering youth through voice and performance.",
       image: "/images/judges/mary-ann.jpg"
     },
     {
