@@ -8,15 +8,15 @@ const OurJudges = () => {
       name: "Mary Ann Tear",
       title: "Senior Examiner & Consultant",
       organization: "Trinity College London",
-      description: "A leading figure in speech and drama education, Mary Ann has over 30 years of experience across Singapore, Southeast Asia, and the UK. As a Senior Examiner and Consultant with Trinity College London, she has trained educators, shaped curriculum, and adjudicated performances worldwide. A passionate advocate for public speaking, she also served as voice coach to Singapore’s World Schools Debating Champions in 2015. At NYOC 2025, she brings global insight, adjudication expertise, and a deep belief in empowering youth through voice and performance.",
+      description: "A leading figure in speech and drama education, Mary Ann has over 30 years of experience across Singapore, Southeast Asia, and the UK. As a Senior Examiner with Trinity College London, she has trained teachers and adjudicated performances worldwide. She also served as voice coach to Singapore’s World Schools Debating Champions in 2015. At NYOC 2025, she brings global expertise and a deep belief in empowering youth through voice and performance.",
       image: "/images/judges/mary-ann.jpg"
     },
     {
-      name: "Muhd Nurhakim",
-      title: "District Director (2024-2025)",
-      organization: "Toastmasters District 80",
-      description: "As District Director, Hakim leads Toastmasters clubs across Singapore, supporting a vibrant community of speakers and leaders. A seasoned speaker and youth mentor, he is deeply committed to nurturing clarity, confidence, and purpose in communication. At NYOC 2025, he brings adjudication rigour, calm authority, and a passion for empowering the next generation of voices.",
-      image: "/images/judges/hakim.jpg"
+      name: "Du Xuan",
+      title: "Lawyer",
+      organization: "Harvard & Oxford Alumna",
+      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor and Oxford Union debater, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
+      image: "/images/judges/du-xuan.jpg"
     },
     {
       name: "Moses Soh",
@@ -26,11 +26,11 @@ const OurJudges = () => {
       image: "/images/judges/moses.jpg"
     },
     {
-      name: "Du Xuan",
-      title: "Lawyer",
-      organization: "Harvard & Oxford Alumna",
-      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor and Oxford Union debater, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
-      image: "/images/judges/du-xuan.jpg"
+      name: "Muhd Nurhakim",
+      title: "District Director (2024-2025)",
+      organization: "Toastmasters District 80",
+      description: "As District Director, Hakim leads Toastmasters clubs across Singapore, supporting a vibrant community of speakers and leaders. A seasoned speaker and youth mentor, he is deeply committed to nurturing clarity, confidence, and purpose in communication. At NYOC 2025, he brings adjudication rigour, calm authority, and a passion for empowering the next generation of voices.",
+      image: "/images/judges/hakim.jpg"
     },
     {
       name: "Alvin Kuek",
@@ -55,7 +55,7 @@ const OurJudges = () => {
             Our Judges
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals — including Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
+          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals — including Trinity College London's Senior Examiner, Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
           </p>
         </motion.div>
         
