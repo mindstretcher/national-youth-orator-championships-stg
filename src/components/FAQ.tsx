@@ -11,6 +11,10 @@ import {
 const FAQ = () => {
   const faqs = [
     {
+      question: "What is the deadline for video submissions?",
+      answer: "All video submissions must be received by 11:59 PM on 31 August 2025. Late entries will not be considered."
+    },
+    {
       question: "How do I know which category to join?",
       answer: "You should choose your category based on your current school level, not your age. For example, if you are in Secondary 2, even if you're 15 years old, you should join the Lower Secondary category."
     },
