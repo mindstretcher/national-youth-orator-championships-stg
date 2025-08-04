@@ -6,7 +6,7 @@ import { useRef, useEffect } from "react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLIFrameElement>(null);
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -40,22 +40,80 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current) {
-            videoRef.current.play();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    // Load YouTube API if not already loaded
+    if (!(window as any).YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
     }
 
-    return () => observer.disconnect();
+    let player: any = null;
+    let observer: IntersectionObserver | null = null;
+    
+    // Function to create the YouTube player
+    const createYouTubePlayer = () => {
+      if (!videoRef.current) return;
+      
+      // Create YouTube player
+      player = new (window as any).YT.Player(videoRef.current, {
+        videoId: 'GopaG86Cjks',
+        playerVars: {
+          'autoplay': 0,
+          'mute': 1,
+          'controls': 1,
+          'rel': 0,
+          'modestbranding': 1,
+          'enablejsapi': 1,
+          'hd': 1,
+          'vq': 'hd1080'
+        },
+        events: {
+          'onReady': (event: any) => {
+            // Set up intersection observer once player is ready
+            observer = new IntersectionObserver(
+              (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && player && player.playVideo) {
+                  player.playVideo();
+                } else if (!entry.isIntersecting && player && player.pauseVideo) {
+                  player.pauseVideo();
+                }
+              },
+              { threshold: 0.3 }
+            );
+
+            // Observe the container element instead of the iframe
+            const container = videoRef.current?.parentElement;
+            if (container) {
+              observer.observe(container);
+            }
+          }
+        }
+      });
+    };
+
+    // Initialize when YouTube API is ready
+    if ((window as any).YT && (window as any).YT.Player) {
+      createYouTubePlayer();
+    } else {
+      // Set up callback for when API loads
+      const previousCallback = (window as any).onYouTubeIframeAPIReady;
+      (window as any).onYouTubeIframeAPIReady = () => {
+        if (previousCallback) previousCallback();
+        createYouTubePlayer();
+      };
+    }
+
+    return () => {
+      // Cleanup
+      if (observer) {
+        observer.disconnect();
+      }
+      if (player && player.destroy) {
+        player.destroy();
+      }
+    };
   }, []);
   
   return (
@@ -176,17 +234,15 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4, duration: 0.6 }}
             >
-              <video
-                ref={videoRef}
-                className="w-full h-auto rounded-lg"
-                controls
-                muted
-                playsInline
-                poster="/images/singapore-skyline-red.png"
-              >
-                <source src="https://nyoc-sg.sgp1.cdn.digitaloceanspaces.com/2025_NYOC%20promo_16-9_draft01.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                ref={videoRef as any}
+                className="w-full aspect-video rounded-lg"
+                src="https://www.youtube.com/embed/GopaG86Cjks?enablejsapi=1&mute=1"
+                title="NYOC 2025 Launch Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </motion.div>
           </div>
         </div>

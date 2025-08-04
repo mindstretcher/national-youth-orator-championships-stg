@@ -36,7 +36,7 @@ const OurJudges = () => {
       name: "Alvin Kuek",
       title: "Lead Coach",
       organization: "Master Speakers",
-      description: "A former Raffles Institution, Raffles Junior College and University scholar, Alvin is a highly respected public speaking coach with over 20 years of experience. A multiple-time speech contest winner and animated speaker himself, he has trained thousands of students – many of whom became champions and confident communicators. At NYOC 2025, he brings deep expertise, sharp mentorship, and an unwavering belief in youth voice.",
+      description: "A former ASEAN Scholar at Raffles Institution and Raffles Junior College, and Kuok Foundation University Scholar, Alvin is a seasoned educator with over 20 years of experience. An animated speaker and inspiring mentor, he has trained thousands – including four President’s Scholars – to become confident communicators. As Lead Coach at Master Speakers, he continues to shape young voices with insight and heart. At NYOC 2025, he brings deep expertise, proven mentorship, and a heartfelt belief in the power of youth voice.",
       image: "/images/judges/alvin.jpg"
     }
   ];
