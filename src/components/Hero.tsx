@@ -253,7 +253,7 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center text-gray-800 font-semibold text-lg md:text-xl mb-6">Organiser & Supporting Partners</h3>
           
-          <div className="grid grid-cols-3 gap-2 md:gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-3 max-w-4xl mx-auto">
             <a href="https://masterspeakers.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
               <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
                 <img src="/images/msp-logo.png" alt="Master Speakers Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
@@ -279,6 +279,15 @@ const Hero = () => {
               </div>
               <div className="text-center h-10 md:h-12 flex flex-col justify-start">
                 <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Speak Good English<br />Movement</span>
+              </div>
+            </a>
+            
+            <a href="https://www.trinitycollege.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
+              <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
+                <img src="/images/tcm-w-tcl-logo.png" alt="Trinity College London Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
+              </div>
+              <div className="text-center h-10 md:h-12 flex flex-col justify-start">
+                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Trinity College London</span>
               </div>
             </a>
           </div>
