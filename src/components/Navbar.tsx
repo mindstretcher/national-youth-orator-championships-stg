@@ -44,11 +44,11 @@ const Navbar = () => {
   return (
     <motion.nav 
       className={cn(
-        "fixed top-10 left-0 right-0 z-50 transition-all duration-300 w-full", 
+        "fixed left-0 right-0 z-50 transition-all duration-300 w-full", 
         isScrolled ? "bg-white shadow-sm" : "bg-red-600"
       )} 
       style={{
-        top: '2.5rem' // 40px to account for sticky banner height
+        top: '2.5rem' // 40px to account for sticky banner height on all screen sizes
       }}
       initial={{ opacity: 1, y: 0 }} 
       animate={{ opacity: 1, y: 0 }}
