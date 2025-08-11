@@ -17,8 +17,8 @@ const StickyResourceBanner = () => {
           <div className="flex items-center gap-2">
             <Download className="w-4 h-4 flex-shrink-0" />
             <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1">
-              <span className="text-sm font-medium leading-tight">🎉 Free NYOC Resources!</span>
-              <span className="text-xs text-red-100 leading-tight">Speech samples & scripts available</span>
+              <span className="text-sm font-medium leading-tight">Download NYOC Speech Scripts & Resources!</span>
+              {/* <span className="text-xs text-red-100 leading-tight">Speech samples & scripts available</span> */}
             </div>
           </div>
           
