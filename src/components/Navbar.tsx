@@ -27,9 +27,16 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      // Calculate offset for sticky banner (~44px) + navbar (~64px) + some padding
+      const offset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
         behavior: 'smooth'
       });
+      
       // Update URL with hash for direct linking
       window.history.pushState(null, '', `/#${id}`);
     }
