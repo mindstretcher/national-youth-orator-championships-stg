@@ -117,7 +117,29 @@ const Hero = () => {
   }, []);
   
   return (
-    <motion.div className="relative w-full pt-14" initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div className="relative w-full pt-24" initial="hidden" animate="visible" variants={containerVariants}>
+      {/* Resource notification banner */}
+      <motion.div 
+        className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg mx-4 sm:mx-6 lg:mx-8 p-3 mb-4 shadow-sm"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+          <span className="text-green-800 font-medium text-sm">🎁 New! Free NYOC speech samples & scripts available</span>
+          <button 
+            onClick={() => {
+              const tipsSection = document.getElementById('tips');
+              if (tipsSection) {
+                tipsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="text-green-700 hover:text-green-900 text-sm font-semibold underline"
+          >
+            View Resources →
+          </button>
+        </div>
+      </motion.div>
       <div className="banner-container relative overflow-hidden min-h-[100vh] md:min-h-[100vh] md:h-[850px] w-full">
         {/* Singapore skyline background image */}
         <div 

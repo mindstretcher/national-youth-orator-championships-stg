@@ -44,8 +44,8 @@ const Navbar = () => {
   return (
     <motion.nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full", 
-        isScrolled ? "bg-white shadow-sm" : "bg-red-600"
+        "fixed left-0 right-0 z-50 transition-all duration-300 w-full", 
+        isScrolled ? "bg-white shadow-sm top-0" : "bg-red-600 top-10"
       )} 
       initial={{ opacity: 1, y: 0 }} 
       animate={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Tips
+                Tips & Resources
               </button>
               <button 
                 onClick={() => scrollToSection('faq')} 
@@ -252,7 +252,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Tips
+            Tips & Resources
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 

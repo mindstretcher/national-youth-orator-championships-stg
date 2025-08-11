@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Users } from "lucide-react";
+import { Users, Download, FileText, Video } from "lucide-react";
 import { useRef, useEffect } from "react";
 
 const ExplainerVideo = () => {
@@ -94,20 +94,63 @@ const ExplainerVideo = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            What Makes a Great Speech?
+            Tips & Resources
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Learn from Master Speakers experts on how to deliver a compelling and memorable speech.
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
+            Learn from Master Speakers experts and access free NYOC resources to help you prepare your winning speech.
           </p>
+          
+          {/* Free Resources Section */}
+          <motion.div
+            className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 mb-8 border border-green-200"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Download className="w-6 h-6 text-green-600" />
+              <h3 className="text-xl font-bold text-green-800">Free NYOC Resources</h3>
+            </div>
+            
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+              Get ahead in your NYOC preparation with our comprehensive collection of speech samples and scripts. 
+              These resources are used in our Master Speakers classes and are now available for everyone!
+            </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
+              <div className="flex items-center gap-2 text-gray-700">
+                <FileText className="w-5 h-5 text-green-600" />
+                <span>Speech samples for all age groups</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Video className="w-5 h-5 text-green-600" />
+                <span>Ready-to-use scripts & templates</span>
+              </div>
+            </div>
+            
+            <button
+              onClick={() => window.open('https://drive.google.com/drive/folders/1iQNhvmCu8rpd44hyRUiQzaz_N3Q6IBCF?usp=sharing', '_blank')}
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+            >
+              <Download className="w-5 h-5" />
+              Download Resources
+            </button>
+          </motion.div>
         </motion.div>
         
         <motion.div
           className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">What Makes a Great Speech?</h3>
+            <p className="text-gray-600 text-center">Watch our expert tips from Master Speakers</p>
+          </div>
+          
           <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
             <iframe
