@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Users, Download, FileText, Video } from "lucide-react";
 import { useRef, useEffect } from "react";
@@ -113,23 +112,23 @@ const ExplainerVideo = () => {
               <h3 className="text-xl font-bold text-red-800">Download NYOC Resources</h3>
             </div>
             
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              We’ve prepared official sample speeches for every age category, so you can jump straight into recording your NYOC video submission. 
+            <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
+              We've prepared official sample speeches & speech tips for every age category, so you can jump straight into recording your NYOC video submission. 
               These resources are used in our Master Speakers classes and are now available for everyone!
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
-              <div className="flex items-center gap-2 text-gray-700">
-                <FileText className="w-5 h-5 text-red-600" />
-                <span>Use the sample speeches as they are</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-4xl mx-auto">
+              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
+                <FileText className="w-8 h-8 text-red-600 mb-2" />
+                <span className="font-medium text-gray-800">Use the sample speeches as they are</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Video className="w-5 h-5 text-red-600" />
-                <span>Adapt them with your own experiences</span>
+              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
+                <Video className="w-8 h-8 text-red-600 mb-2" />
+                <span className="font-medium text-gray-800">Adapt them with your own experiences</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <FileText className="w-5 h-5 text-red-600" />
-                <span>Create a completely unique story from scratch</span>
+              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
+                <FileText className="w-8 h-8 text-red-600 mb-2" />
+                <span className="font-medium text-gray-800">Create a completely unique story from scratch</span>
               </div>
             </div>
             
