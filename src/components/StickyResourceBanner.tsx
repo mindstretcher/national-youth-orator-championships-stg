@@ -17,31 +17,33 @@ const StickyResourceBanner = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -50, opacity: 0 }}
-        className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-500 via-red-600 to-orange-500 text-white py-2.5 px-4 shadow-sm"
+        className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white py-2.5 px-4 shadow-sm"
       >
-        <div className="container mx-auto flex items-center justify-between max-w-7xl">
-          <div className="flex items-center gap-2 flex-1 min-w-0">
-            <Download className="w-4 h-4 flex-shrink-0" />
-            <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 min-w-0">
-              <span className="text-sm font-medium leading-tight">🎉 Free NYOC Resources!</span>
-              <span className="text-xs text-red-100 leading-tight">Speech samples & scripts available</span>
+        <div className="container mx-auto max-w-7xl">
+          <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center gap-2">
+              <Download className="w-4 h-4 flex-shrink-0" />
+              <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1">
+                <span className="text-sm font-medium leading-tight">🎉 Free NYOC Resources!</span>
+                <span className="text-xs text-red-100 leading-tight">Speech samples & scripts available</span>
+              </div>
             </div>
-          </div>
-          
-          <div className="flex items-center gap-2 ml-2">
-            <button
-              onClick={handleDownload}
-              className="bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap"
-            >
-              Download
-            </button>
-            <button
-              onClick={() => setIsVisible(false)}
-              className="text-white/80 hover:text-white p-0.5 rounded transition-colors"
-              aria-label="Close banner"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
+            
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleDownload}
+                className="bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap"
+              >
+                Download
+              </button>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="text-white/80 hover:text-white p-0.5 rounded transition-colors"
+                aria-label="Close banner"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
         </div>
       </motion.div>
