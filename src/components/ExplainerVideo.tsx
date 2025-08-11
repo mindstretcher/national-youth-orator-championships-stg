@@ -102,15 +102,15 @@ const ExplainerVideo = () => {
           
           {/* Free Resources Section */}
           <motion.div
-            className="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 mb-8 border border-green-200"
+            className="bg-gradient-to-br from-red-50 via-orange-50 to-red-100 rounded-xl p-6 mb-8 border border-red-200"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Download className="w-6 h-6 text-green-600" />
-              <h3 className="text-xl font-bold text-green-800">Free NYOC Resources</h3>
+              <Download className="w-6 h-6 text-red-600" />
+              <h3 className="text-xl font-bold text-red-800">Free NYOC Resources</h3>
             </div>
             
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
@@ -120,18 +120,18 @@ const ExplainerVideo = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
               <div className="flex items-center gap-2 text-gray-700">
-                <FileText className="w-5 h-5 text-green-600" />
+                <FileText className="w-5 h-5 text-red-600" />
                 <span>Speech samples for all age groups</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
-                <Video className="w-5 h-5 text-green-600" />
+                <Video className="w-5 h-5 text-red-600" />
                 <span>Ready-to-use scripts & templates</span>
               </div>
             </div>
             
             <button
               onClick={() => window.open('https://drive.google.com/drive/folders/1iQNhvmCu8rpd44hyRUiQzaz_N3Q6IBCF?usp=sharing', '_blank')}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
               Download Resources
