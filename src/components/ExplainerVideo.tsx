@@ -121,7 +121,7 @@ const ExplainerVideo = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
               <div className="flex items-center gap-2 text-gray-700">
                 <FileText className="w-5 h-5 text-red-600" />
-                <span>Use the speeches as they are</span>
+                <span>Use the sample speeches as they are</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <Video className="w-5 h-5 text-red-600" />
