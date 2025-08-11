@@ -17,7 +17,7 @@ const StickyResourceBanner = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -50, opacity: 0 }}
-        className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white py-2.5 px-4 shadow-sm"
+        className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-pink-300 via-red-300 to-orange-400 text-white py-2.5 px-4 shadow-sm"
       >
         <div className="container mx-auto max-w-7xl">
           <div className="flex items-center justify-center gap-3">
@@ -25,7 +25,7 @@ const StickyResourceBanner = () => {
               <Download className="w-4 h-4 flex-shrink-0" />
               <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1">
                 <span className="text-sm font-medium leading-tight">🎉 Free NYOC Resources!</span>
-                <span className="text-xs text-red-100 leading-tight">Speech samples & scripts available</span>
+                <span className="text-xs text-pink-100 leading-tight">Speech samples & scripts available</span>
               </div>
             </div>
             
