@@ -117,6 +117,8 @@ const ExplainerVideo = () => {
               These resources are used in our Master Speakers classes and are now available for everyone!
             </p>
             
+            <p className="text-gray-800 font-semibold mb-4 text-lg">Choose your approach:</p>
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-4xl mx-auto">
               <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
                 <FileText className="w-8 h-8 text-red-600 mb-2" />
