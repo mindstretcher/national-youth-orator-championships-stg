@@ -117,7 +117,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <motion.div className="relative w-full pt-[6.5rem] md:pt-28" initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div className="relative w-full pt-[108px]" initial="hidden" animate="visible" variants={containerVariants}>
       <div className="banner-container relative overflow-hidden min-h-[100vh] md:min-h-[100vh] md:h-[850px] w-full">
         {/* Singapore skyline background image */}
         <div 
