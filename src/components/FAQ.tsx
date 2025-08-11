@@ -37,6 +37,10 @@ const FAQ = () => {
     {
       question: "What should I wear in my video?",
       answer: "Students should dress in their school uniform. University and Polytechnic students can dress in smart casual attire."
+    },
+    {
+      question: "Will coaching or guidance be provided for participants?",
+      answer: "We want every student in Singapore to have the opportunity to participate, grow, and shine on this national stage – whether or not they have formal coaching. To support all participants, we've made a range of free resources available: Official speech scripts & tips they can use (download resources at nyoc.sg/#tips), a short video where Coach Raymond from Master Speakers shares 3 practical tips on crafting a great speech – a perfect starting point for anyone unsure how to begin (also at nyoc.sg/#tips). From now until the 31 August online submission deadline, we'll share tips and guidance on Instagram @masterspeakersacademy, Facebook 'Master Speakers Academy', and TikTok @masterspeakersacademy. Students in Master Speakers classes may also get additional exposure to speech preparation. However, all key guidance will still be shared publicly – so that every student has equal access to support."
     }
   ];
 
