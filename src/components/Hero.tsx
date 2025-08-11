@@ -154,9 +154,9 @@ const Hero = () => {
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
               {/* Social Media Banner */}
-              <motion.div className="mb-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20" variants={itemVariants}>
+              <motion.div className="mb-4 inline-flex mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20" variants={itemVariants}>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4">
-                  <p className="text-white text-sm sm:text-base font-medium text-center lg:text-left">
+                  <p className="text-white text-sm sm:text-base font-medium text-center lg:text-left whitespace-nowrap">
                     Stay updated with NYOC announcements and updates
                   </p>
                   <div className="flex items-center justify-center gap-3 sm:gap-4">
