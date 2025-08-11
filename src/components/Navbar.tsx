@@ -110,6 +110,17 @@ const Navbar = () => {
                 Categories & Themes
               </button>
               <button 
+                onClick={() => scrollToSection('tips')} 
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
+                    : "text-white hover:text-red-100 hover:bg-red-700"
+                )}
+              >
+                Tips & Resources
+              </button>
+              <button 
                 onClick={() => scrollToSection('our-judges')} 
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
@@ -130,17 +141,6 @@ const Navbar = () => {
                 )}
               >
                 Timeline
-              </button>
-              <button 
-                onClick={() => scrollToSection('tips')} 
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
-                    : "text-white hover:text-red-100 hover:bg-red-700"
-                )}
-              >
-                Tips & Resources
               </button>
               <button 
                 onClick={() => scrollToSection('faq')} 
@@ -225,6 +225,17 @@ const Navbar = () => {
             Categories & Themes
           </button>
           <button 
+            onClick={() => scrollToSection('tips')} 
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "text-gray-700 hover:bg-gray-50" 
+                : "text-white hover:bg-red-700"
+            )}
+          >
+            Tips & Resources
+          </button>
+          <button 
             onClick={() => scrollToSection('our-judges')} 
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
@@ -245,17 +256,6 @@ const Navbar = () => {
             )}
           >
             Timeline
-          </button>
-          <button 
-            onClick={() => scrollToSection('tips')} 
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "text-gray-700 hover:bg-gray-50" 
-                : "text-white hover:bg-red-700"
-            )}
-          >
-            Tips & Resources
           </button>
           <button 
             onClick={() => scrollToSection('faq')} 

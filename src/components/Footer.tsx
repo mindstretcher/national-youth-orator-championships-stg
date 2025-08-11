@@ -35,9 +35,9 @@ const Footer = () => {
               <li><button onClick={() => document.getElementById('why-take-part')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Why Take Part</button></li>
               <li><button onClick={() => document.getElementById('how-to-join')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">How To Join</button></li>
               <li><button onClick={() => document.getElementById('divisions')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Categories & Themes</button></li>
+              <li><button onClick={() => document.getElementById('tips')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Tips & Resources</button></li>
               <li><button onClick={() => document.getElementById('our-judges')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Judges</button></li>
               <li><button onClick={() => document.getElementById('timeline')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Timeline</button></li>
-              <li><button onClick={() => document.getElementById('tips')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">Tips & Resources</button></li>
               <li><button onClick={() => document.getElementById('faq')?.scrollIntoView({behavior: 'smooth'})} className="text-red-100 hover:text-white transition-colours">FAQ</button></li>
             </ul>
           </div>
