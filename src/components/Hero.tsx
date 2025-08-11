@@ -154,9 +154,9 @@ const Hero = () => {
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
               {/* Social Media Banner */}
-              <motion.div className="mb-4 bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-white/30 shadow-lg" variants={itemVariants}>
+              <motion.div className="mb-4 bg-red-600/90 backdrop-blur-sm rounded-lg p-4 border border-red-500/50 shadow-lg" variants={itemVariants}>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                  <p className="text-gray-800 text-sm sm:text-base font-medium text-center sm:text-left">
+                  <p className="text-white text-sm sm:text-base font-medium text-center sm:text-left">
                     Stay updated with NYOC announcements and updates
                   </p>
                   <div className="flex items-center justify-center gap-3 sm:gap-4">
@@ -164,7 +164,7 @@ const Hero = () => {
                       href="https://www.instagram.com/masterspeakersacademy" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 hover:text-pink-600 transition-colors group"
+                      className="flex items-center gap-1 text-white hover:text-pink-200 transition-colors group"
                     >
                       <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                       <span className="text-sm font-medium">Instagram</span>
@@ -173,7 +173,7 @@ const Hero = () => {
                       href="https://www.facebook.com/masterspeakersacademy" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors group"
+                      className="flex items-center gap-1 text-white hover:text-blue-200 transition-colors group"
                     >
                       <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
                       <span className="text-sm font-medium">Facebook</span>
@@ -182,7 +182,7 @@ const Hero = () => {
                       href="https://www.tiktok.com/@masterspeakersacademy" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 hover:text-purple-600 transition-colors group"
+                      className="flex items-center gap-1 text-white hover:text-purple-200 transition-colors group"
                     >
                       <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19.321 5.562a5.122 5.122 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.294-1.924-1.294-3.338h-3.089v14.564c0 1.4-1.135 2.535-2.535 2.535s-2.535-1.135-2.535-2.535 1.135-2.535 2.535-2.535c.269 0 .529.042.773.121V9.897a6.75 6.75 0 0 0-.773-.044c-3.729 0-6.75 3.021-6.75 6.75s3.021 6.75 6.75 6.75 6.75-3.021 6.75-6.75V8.943a9.317 9.317 0 0 0 5.448 1.756V7.61a5.122 5.122 0 0 1-4.5-2.048z"/>
