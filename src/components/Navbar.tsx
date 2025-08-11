@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,23 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
+  // Set navbar height CSS variable
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      if (navbarRef.current) {
+        const height = navbarRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+      }
+    };
+    
+    // Set initial height
+    updateNavbarHeight();
+    
+    // Update on resize or when menu opens/closes
+    window.addEventListener('resize', updateNavbarHeight);
+    return () => window.removeEventListener('resize', updateNavbarHeight);
+  }, [isMenuOpen]); // Re-run when menu opens/closes
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -50,12 +68,13 @@ const Navbar = () => {
 
   return (
     <motion.nav 
+      ref={navbarRef}
       className={cn(
         "fixed left-0 right-0 z-50 transition-all duration-300 w-full", 
         isScrolled ? "bg-white shadow-sm" : "bg-red-600"
       )} 
       style={{
-        top: '44px' // Banner height (py-2.5 = 20px + 24px line height = ~44px)
+        top: 'var(--banner-height, 44px)' // Use CSS variable for banner height
       }}
       initial={{ opacity: 1, y: 0 }} 
       animate={{ opacity: 1, y: 0 }}
@@ -190,14 +209,18 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={cn(
-        "xl:hidden transition-all duration-300 overflow-hidden w-full",
-        isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-      )}>
-        <div className={cn(
-          "px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-sm",
-          isScrolled ? "bg-white" : "bg-red-600"
-        )}>
+      {isMenuOpen && (
+        <motion.div 
+          className="xl:hidden w-full overflow-hidden"
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className={cn(
+            "px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-sm",
+            isScrolled ? "bg-white" : "bg-red-600"
+          )}>
           <button 
             onClick={() => scrollToSection('why-take-part')} 
             className={cn(
@@ -287,7 +310,8 @@ const Navbar = () => {
             Register Now
           </button>
         </div>
-      </div>
+        </motion.div>
+      )}
     </motion.nav>
   );
 };

@@ -2,11 +2,12 @@
 import { ArrowRight, Calendar, Users, Instagram, Facebook } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
-  const videoRef = useRef<HTMLIFrameElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [topOffset, setTopOffset] = useState(0);
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -39,6 +40,22 @@ const Hero = () => {
     window.open('https://forms.gle/XSuzJ3eyVqQT6viG7', '_blank');
   };
 
+  // Effect to calculate and update the top offset for proper positioning
+  useEffect(() => {
+    const updateTopOffset = () => {
+      const bannerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--banner-height') || '44');
+      const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height') || '56');
+      setTopOffset(bannerHeight + navbarHeight);
+    };
+    
+    // Initial calculation
+    updateTopOffset();
+    
+    // Update on resize
+    window.addEventListener('resize', updateTopOffset);
+    return () => window.removeEventListener('resize', updateTopOffset);
+  }, []);
+  
   useEffect(() => {
     // Load YouTube API if not already loaded
     if (!(window as any).YT) {
@@ -117,14 +134,17 @@ const Hero = () => {
   }, []);
   
   return (
-    <motion.div className="relative w-full pt-[108px]" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container relative overflow-hidden min-h-[100vh] md:min-h-[100vh] md:h-[850px] w-full">
+    <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
+      <div className="banner-container relative overflow-hidden w-full" style={{ minHeight: isMobile ? 'calc(130vh)' : 'calc(100vh - 20px)' }}>
         {/* Singapore skyline background image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-no-repeat" 
           style={{
             backgroundImage: 'url("/images/singapore-skyline-red.png")',
-            backgroundPosition: '50% 35%' // Position to show more of the skyline (higher up)
+            backgroundPosition: isMobile ? '50% 50%' : '50% 35%', // Center on mobile, higher up on desktop
+            backgroundSize: 'cover', // Cover the entire container
+            height: '100%', // Fill the container height
+            objectFit: 'cover' // Ensure the image covers the area while maintaining aspect ratio
           }}
         >
           {/* Balanced overlay for text readability while preserving image visibility */}
@@ -139,7 +159,7 @@ const Hero = () => {
           <div className="absolute bottom-0 left-0 right-0 h-1/6 opacity-50" 
             style={{
               backgroundImage: 'url("/images/singapore-skyline-red.png")',
-              backgroundPosition: '50% 35%',
+              backgroundPosition: isMobile ? '50% 50%' : '50% 35%',
               backgroundSize: 'cover',
               transform: 'scaleY(-1)',
               maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%)',
@@ -150,11 +170,38 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="banner-overlay bg-transparent pt-4 pb-10 sm:pt-28 sm:pb-16 md:py-24 w-full h-full flex items-center">
+        <div className="banner-overlay bg-transparent pt-2 pb-44 sm:pt-28 sm:pb-28 md:py-24 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
+
+              
+              <motion.div className="mt-0 sm:mt-0 mb-2 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
+                <span className="text-sm font-medium text-white mr-2">In Support of</span>
+                <img src="/lovable-uploads/sg60-logo.png" alt="SG60 Logo" className="h-10 w-auto" />
+              </motion.div>
+              
+              <motion.h1 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 leading-tight px-2" variants={itemVariants}>
+                National Youth Orator Championships 2025
+              </motion.h1>
+              
+              <motion.div className="mb-3" variants={itemVariants}>
+                <h2 className="text-white text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3">
+                  SG60 Edition: My Singapore
+                </h2>
+                <div className="flex flex-col gap-2 text-white mt-2">
+                  <div className="flex items-center justify-center text-base sm:text-base">
+                    <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
+                    <span className="font-medium">Submission Deadline: 31 August 2025</span>
+                  </div>
+                  <div className="flex items-center justify-center text-base sm:text-base">
+                    <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
+                    <span className="font-medium">Primary to University students</span>
+                  </div>
+                </div>
+              </motion.div>
+              
               {/* Social Media Banner */}
-              <motion.div className="mb-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 mx-auto max-w-[90%] sm:max-w-none sm:inline-flex" variants={itemVariants}>
+              <motion.div className="my-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 mx-auto max-w-[90%] sm:max-w-none sm:inline-flex" variants={itemVariants}>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-4">
                   <p className="text-white text-sm sm:text-base font-medium text-center lg:text-left">
                     Stay updated with NYOC announcements and updates
@@ -189,31 +236,6 @@ const Hero = () => {
                       </svg>
                       <span className="text-sm font-medium">TikTok</span>
                     </a>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div className="mt-0 sm:mt-0 mb-2 flex flex-row items-center justify-center gap-2" variants={itemVariants}>
-                <span className="text-sm font-medium text-white mr-2">In Support of</span>
-                <img src="/lovable-uploads/sg60-logo.png" alt="SG60 Logo" className="h-10 w-auto" />
-              </motion.div>
-              
-              <motion.h1 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 leading-tight px-2" variants={itemVariants}>
-                National Youth Orator Championships 2025
-              </motion.h1>
-              
-              <motion.div className="mb-3" variants={itemVariants}>
-                <h2 className="text-white text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-3">
-                  SG60 Edition: My Singapore
-                </h2>
-                <div className="flex flex-col gap-2 text-white mt-2">
-                  <div className="flex items-center justify-center text-base sm:text-base">
-                    <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
-                    <span className="font-medium">Submission Deadline: 31 August 2025</span>
-                  </div>
-                  <div className="flex items-center justify-center text-base sm:text-base">
-                    <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
-                    <span className="font-medium">Primary to University students</span>
                   </div>
                 </div>
               </motion.div>
@@ -335,7 +357,7 @@ const Hero = () => {
       </div>
       
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
-        <motion.div className="mt-3 mb-4 sm:mt-4 sm:mb-6 bg-white rounded-2xl shadow-xl p-3 sm:p-6 md:p-8 max-w-4xl mx-auto border-t-4 border-red-600" variants={containerVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }}>
+        <motion.div className="mt-6 mb-8 sm:mt-4 sm:mb-6 bg-white rounded-2xl shadow-xl p-3 sm:p-6 md:p-8 max-w-4xl mx-auto border-t-4 border-red-600" variants={containerVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }}>
           <motion.p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed text-center" variants={itemVariants}>
           In this SG60 Edition, NYOC 2025 invites students from Primary to University levels to take the stage and speak from the heart. On the theme <span className="font-bold text-red-700">"My Singapore"</span>, students will reflect on our nation’s past, share what it means to be Singaporean today, and voice their hopes for the future.
           </motion.p>

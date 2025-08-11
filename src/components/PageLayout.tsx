@@ -24,7 +24,9 @@ const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
     <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
       <StickyResourceBanner />
       <Navbar />
-      {children}
+      <main className="flex-1" style={{ paddingTop: 'calc(var(--banner-height, 44px) + var(--navbar-height, 56px))' }}>
+        {children}
+      </main>
       {showContact && <ContactInfo />}
       <Footer />
       {showContact && <FloatingContactButton />}

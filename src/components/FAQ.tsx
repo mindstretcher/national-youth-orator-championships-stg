@@ -19,6 +19,36 @@ const FAQ = () => {
       answer: "You should choose your category based on your current school level, not your age. For example, if you are in Secondary 2, even if you're 15 years old, you should join the Lower Secondary category."
     },
     {
+      question: "Will coaching or guidance be provided for participants?",
+      answer: (
+        <div className="space-y-3">
+          <p>
+            We want every student in Singapore to have the opportunity to participate, grow, and shine on this national stage – whether or not they have formal coaching.
+          </p>
+          <p className="font-medium">To support all participants, we've made a range of free resources available:</p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <a href="#tips" className="text-red-600 hover:text-red-800 underline">Official speech scripts & tips</a> you can download and use
+            </li>
+            <li>
+              A <a href="#tips" className="text-red-600 hover:text-red-800 underline">short video</a> where Coach Raymond shares 3 practical tips on crafting a great speech – perfect for anyone unsure how to begin
+            </li>
+            <li>
+              Regular tips and guidance on our social media channels until the 31 August submission deadline:
+              <ul className="list-disc pl-5 mt-1">
+                <li>Instagram <a href="https://www.instagram.com/masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">@masterspeakersacademy</a></li>
+                <li>Facebook <a href="https://www.facebook.com/masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">Master Speakers Academy</a></li>
+                <li>TikTok <a href="https://www.tiktok.com/@masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">@masterspeakersacademy</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Students in Master Speakers classes may also get additional exposure to speech preparation. However, all key guidance will be shared publicly – ensuring every student has equal access to support.
+          </p>
+        </div>
+      )
+    },
+    {
       question: "Can I submit more than one video?",
       answer: "No. Each student may submit one entry only."
     },
@@ -37,10 +67,6 @@ const FAQ = () => {
     {
       question: "What should I wear in my video?",
       answer: "Students should dress in their school uniform. University and Polytechnic students can dress in smart casual attire."
-    },
-    {
-      question: "Will coaching or guidance be provided for participants?",
-      answer: "We want every student in Singapore to have the opportunity to participate, grow, and shine on this national stage – whether or not they have formal coaching. To support all participants, we've made a range of free resources available: Official speech scripts & tips they can use (download resources at nyoc.sg/#tips), a short video where Coach Raymond from Master Speakers shares 3 practical tips on crafting a great speech – a perfect starting point for anyone unsure how to begin (also at nyoc.sg/#tips). From now until the 31 August online submission deadline, we'll share tips and guidance on Instagram @masterspeakersacademy, Facebook 'Master Speakers Academy', and TikTok @masterspeakersacademy. Students in Master Speakers classes may also get additional exposure to speech preparation. However, all key guidance will still be shared publicly – so that every student has equal access to support."
     }
   ];
 
