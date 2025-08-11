@@ -110,22 +110,26 @@ const ExplainerVideo = () => {
           >
             <div className="flex items-center justify-center gap-2 mb-4">
               <Download className="w-6 h-6 text-red-600" />
-              <h3 className="text-xl font-bold text-red-800">Free NYOC Resources</h3>
+              <h3 className="text-xl font-bold text-red-800">Download NYOC Resources</h3>
             </div>
             
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-              Get ahead in your NYOC preparation with our comprehensive collection of speech samples and scripts. 
+              We’ve prepared official sample speeches for every age category, so you can jump straight into recording your NYOC video submission. 
               These resources are used in our Master Speakers classes and are now available for everyone!
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
               <div className="flex items-center gap-2 text-gray-700">
                 <FileText className="w-5 h-5 text-red-600" />
-                <span>Speech samples for all age groups</span>
+                <span>Use the speeches as they are</span>
               </div>
               <div className="flex items-center gap-2 text-gray-700">
                 <Video className="w-5 h-5 text-red-600" />
-                <span>Ready-to-use scripts & templates</span>
+                <span>Adapt them with your own experiences</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <FileText className="w-5 h-5 text-red-600" />
+                <span>Create a completely unique story from scratch</span>
               </div>
             </div>
             
