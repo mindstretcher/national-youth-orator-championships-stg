@@ -159,9 +159,9 @@ const Hero = () => {
                   <p className="text-white text-sm sm:text-base font-medium text-center lg:text-left">
                     Stay updated with NYOC announcements and updates
                   </p>
-                  <div className="flex items-center justify-center gap-3 sm:gap-4">
+                  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-full">
                     <a 
-                      href="https://www.instagram.com/masterspeakersacademy" 
+                      href="https://www.instagram.com/masterspeakersacademy"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-white hover:text-pink-200 transition-colors group"
