@@ -344,12 +344,12 @@ const Hero = () => {
               </div>
             </a>
             
-            <a href="https://www.trinitycollege.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
+            <a href="https://trinitycollege.sg/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 md:gap-3 hover:opacity-90 transition-opacity group">
               <div className="w-20 h-14 md:w-28 md:h-20 bg-white rounded-lg p-2 flex items-center justify-center border border-gray-200 shadow-sm group-hover:shadow-md transition-shadow">
                 <img src="/images/tcm-w-tcl-logo.png" alt="Trinity College London Logo" className="max-w-full max-h-full w-auto h-auto object-contain" />
               </div>
               <div className="text-center h-10 md:h-12 flex flex-col justify-start">
-                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">Trinity College London</span>
+                <span className="text-gray-800 font-bold text-xs md:text-base leading-tight">TCM Examinations</span>
               </div>
             </a>
           </div>
