@@ -35,7 +35,6 @@ const HowToJoin = () => {
     "Submit your video in MP4 format",
     "Face & whole body of the speaker must be visible",
     "No editing of the video is allowed (record as one continuous speech)",
-    "Dress in school uniform (for Uni & Poly students, dress in smart casual)",
     "Use of notes or cue cards is strictly not allowed – good speakers can engage without written aids"
   ];
 

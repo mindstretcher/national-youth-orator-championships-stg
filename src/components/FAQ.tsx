@@ -66,7 +66,7 @@ const FAQ = () => {
     },
     {
       question: "What should I wear in my video?",
-      answer: "Students should dress in their school uniform. University and Polytechnic students can dress in smart casual attire."
+      answer: "For the video submission, you can dress in any attire. Students should dress in their school uniform for the live semi-finals & finals"
     }
   ];
 
