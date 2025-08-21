@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Users, Download, FileText, Video } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const ExplainerVideo = () => {
   const videoRef = useRef<HTMLIFrameElement>(null);
+  const infoSessionVideoRef = useRef<HTMLIFrameElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -16,7 +17,9 @@ const ExplainerVideo = () => {
     }
 
     let player: any = null;
+    let infoSessionPlayer: any = null;
     let observer: IntersectionObserver | null = null;
+    let infoSessionObserver: IntersectionObserver | null = null;
     
     // Function to create the YouTube player
     const createYouTubePlayer = () => {
@@ -59,15 +62,62 @@ const ExplainerVideo = () => {
       });
     };
 
+    // This section is replaced in the previous chunk
+
+    // Function to create the info session YouTube player
+    const createInfoSessionYouTubePlayer = () => {
+      if (!infoSessionVideoRef.current) return;
+      
+      // Create YouTube player for info session
+      infoSessionPlayer = new (window as any).YT.Player(infoSessionVideoRef.current, {
+        videoId: 'AoE0JK5fISI',
+        playerVars: {
+          'autoplay': 0,
+          'mute': 1,
+          'controls': 1,
+          'rel': 0,
+          'modestbranding': 1,
+          'enablejsapi': 1,
+          'hd': 1,
+          'vq': 'hd1080',
+          'start': 250 // Start at 250 seconds (4:10)
+        },
+        events: {
+          'onReady': (event: any) => {
+            // Set up intersection observer once player is ready
+            infoSessionObserver = new IntersectionObserver(
+              (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && infoSessionPlayer && infoSessionPlayer.playVideo) {
+                  infoSessionPlayer.playVideo();
+                } else if (!entry.isIntersecting && infoSessionPlayer && infoSessionPlayer.pauseVideo) {
+                  infoSessionPlayer.pauseVideo();
+                }
+              },
+              { threshold: 0.3 }
+            );
+
+            // Observe the container element
+            const container = infoSessionVideoRef.current?.closest('.video-container');
+            if (container) {
+              infoSessionObserver.observe(container);
+            }
+          }
+        }
+      });
+    };
+
     // Initialize when YouTube API is ready
     if ((window as any).YT && (window as any).YT.Player) {
       createYouTubePlayer();
+      createInfoSessionYouTubePlayer();
     } else {
       // Set up callback for when API loads
       const previousCallback = (window as any).onYouTubeIframeAPIReady;
       (window as any).onYouTubeIframeAPIReady = () => {
         if (previousCallback) previousCallback();
         createYouTubePlayer();
+        createInfoSessionYouTubePlayer();
       };
     }
 
@@ -76,8 +126,14 @@ const ExplainerVideo = () => {
       if (observer) {
         observer.disconnect();
       }
+      if (infoSessionObserver) {
+        infoSessionObserver.disconnect();
+      }
       if (player && player.destroy) {
         player.destroy();
+      }
+      if (infoSessionPlayer && infoSessionPlayer.destroy) {
+        infoSessionPlayer.destroy();
       }
     };
   }, []);
@@ -156,7 +212,7 @@ const ExplainerVideo = () => {
             <p className="text-gray-600 text-center">Watch our expert tips from Master Speakers</p>
           </div>
           
-          <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl">
+          <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl video-container">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
             <iframe
               ref={videoRef as any}
@@ -171,6 +227,31 @@ const ExplainerVideo = () => {
               <div className="flex items-center text-white">
                 <Users className="w-5 h-5 mr-2" />
                 <span className="text-sm font-medium">Presented by Master Speakers</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Information Session Video */}
+          <div className="mt-12 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">NYOC Information Session</h3>
+            <p className="text-gray-600 text-center">Learn how our students built outstanding portfolios through public speaking, why NYOC is a great platform, and preparation tips</p>
+          </div>
+          
+          <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl video-container">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
+            <iframe
+              ref={infoSessionVideoRef as any}
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/AoE0JK5fISI?enablejsapi=1&mute=1&start=250"
+              title="NYOC Information Session"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
+              <div className="flex items-center text-white">
+                <Users className="w-5 h-5 mr-2" />
+                <span className="text-sm font-medium">NYOC Webinar</span>
               </div>
             </div>
           </div>

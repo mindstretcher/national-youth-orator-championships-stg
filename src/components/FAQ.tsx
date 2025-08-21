@@ -12,7 +12,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What is the deadline for video submissions?",
-      answer: "All video submissions must be received by 11:59 PM on 31 August 2025. Late entries will not be considered."
+      answer: "All video submissions must be received by 11:59 PM on 31 August 2025."
     },
     {
       question: "How do I know which category to join?",
@@ -50,7 +50,7 @@ const FAQ = () => {
     },
     {
       question: "Can I submit more than one video?",
-      answer: "No. Each student may submit one entry only."
+      answer: "Yes, you can submit more than one video for the online preliminary round. However, we will only use the final clip submitted, which we assume is your best and latest clip."
     },
     {
       question: "Can I use slides, props, pictures, or music in my video?",
