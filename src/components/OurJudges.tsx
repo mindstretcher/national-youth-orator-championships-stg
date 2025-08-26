@@ -15,7 +15,7 @@ const OurJudges = () => {
       name: "Du Xuan",
       title: "Lawyer",
       organization: "Harvard & Oxford Alumna",
-      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor and Oxford Union debater, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
+      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
       image: "/images/judges/du-xuan.jpg"
     },
     {
