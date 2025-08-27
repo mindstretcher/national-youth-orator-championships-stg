@@ -22,20 +22,10 @@ const HowToJoin = () => {
   ];
 
   const recordingTips = [
-    <>Adhere to the <a href="#divisions" onClick={(e) => {
-      e.preventDefault();
-      const divisionsSection = document.getElementById('divisions');
-      if (divisionsSection) {
-        const yOffset = -80; // Adjust for header height
-        const y = divisionsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      }
-    }} className="text-red-600 hover:underline">video duration</a> for your category</>,
     "Record in landscape orientation",
     "Submit your video in MP4 format",
     "Face & whole body of the speaker must be visible",
-    "No editing of the video is allowed (record as one continuous speech)",
-    "Use of notes or cue cards is strictly not allowed – good speakers can engage without written aids"
+    "No editing of the video is allowed (record as one continuous speech)"
   ];
 
   return (
