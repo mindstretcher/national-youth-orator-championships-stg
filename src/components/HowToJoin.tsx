@@ -22,7 +22,6 @@ const HowToJoin = () => {
   ];
 
   const recordingTips = [
-    "Record in landscape orientation",
     "Submit your video in MP4 format",
     "No editing of the video is allowed (record as one continuous speech)"
   ];
