@@ -2,6 +2,18 @@
 import { motion } from "framer-motion";
 import { Calendar, Users, Trophy, Video, Award, Upload, Clock, Flag } from "lucide-react";
 
+import { ReactNode } from "react";
+
+interface KeyDate {
+  milestone: string | ReactNode;
+  date: string;
+  icon: any;
+  category: string;
+  type: string;
+  isKeyDate: boolean;
+  extraInfo?: ReactNode;
+}
+
 const Timeline = () => {
   // Key dates from the competition timeline
   const keyDates = [
@@ -22,16 +34,17 @@ const Timeline = () => {
       isKeyDate: true
     },
     {
-      milestone: "Announcement of Semi-Finalists",
-      date: "4 September 2025",
+      milestone: "Announcement of Semi-Finalists & Live Feedback & Showcase Session",
+      extraInfo: <a href="https://luma.com/5n4sydhu" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">REGISTER NOW: Physical LIVE Session</a>,
+      date: "13 September 2025",
       icon: Users,
       category: "semi",
       type: "announcement",
       isKeyDate: false
     },
     {
-      milestone: "Coaching Weeks",
-      date: "6-14 September & 1-7 November 2025",
+      milestone: "Coaching Week for Semi-Finalists",
+      date: "1-7 November 2025",
       icon: Award,
       category: "semi",
       type: "coaching",
@@ -125,15 +138,18 @@ const Timeline = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
+                  <div className="flex items-start">
+                    <div className="mr-4">
+                      <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                         <item.icon className="w-4 h-4" />
                       </div>
-                      <div>
-                        <p className="text-sm font-medium text-gray-900">{item.milestone}</p>
-                        <p className="text-sm font-bold text-red-600">{item.date}</p>
-                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900">{item.milestone}</p>
+                      {item.extraInfo && (
+                        <p className="text-sm text-blue-600 mt-1">{item.extraInfo}</p>
+                      )}
+                      <p className="text-sm font-bold text-red-600 mt-1">{item.date}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -175,7 +191,7 @@ const Timeline = () => {
                   >
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
+                        <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
                         <span className="font-medium text-gray-900">{item.milestone}</span>
@@ -201,10 +217,15 @@ const Timeline = () => {
                   >
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
+                        <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
-                        <span className="font-medium text-gray-900">{item.milestone}</span>
+                        <div>
+                          <span className="font-medium text-gray-900">{item.milestone}</span>
+                          {item.extraInfo && (
+                            <div className="mt-1 text-sm text-blue-600">{item.extraInfo}</div>
+                          )}
+                        </div>
                       </div>
                     </td>
                     <td className="py-4 px-4 font-bold text-red-600">{item.date}</td>
@@ -227,7 +248,7 @@ const Timeline = () => {
                   >
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
+                        <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
                         <span className="font-medium text-gray-900">{item.milestone}</span>

@@ -191,7 +191,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-2 text-white mt-2">
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
-                    <span className="font-medium">Submission Deadline: 31 August 2025</span>
+                    <span className="font-medium">Announcement of Semi-Finalists: 13 September 2025 (<a href="https://luma.com/5n4sydhu" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-blue-200 transition-colors">Register</a>)</span>
                   </div>
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
