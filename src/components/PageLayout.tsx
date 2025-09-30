@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfo from '@/components/ContactInfo';
 import FloatingContactButton from '@/components/FloatingContactButton';
-import StickyResourceBanner from '@/components/StickyResourceBanner';
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -22,9 +21,8 @@ const PageLayout = ({ children, showContact = true }: PageLayoutProps) => {
 
   return (
     <div className="min-h-screen bg-white w-full max-w-[100vw] overflow-x-hidden">
-      <StickyResourceBanner />
       <Navbar />
-      <main className="flex-1" style={{ paddingTop: 'calc(var(--banner-height, 44px) + var(--navbar-height, 56px))' }}>
+      <main className="flex-1" style={{ paddingTop: '0px' }}>
         {children}
       </main>
       {showContact && <ContactInfo />}

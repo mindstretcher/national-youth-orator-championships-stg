@@ -18,9 +18,9 @@ const Divisions = () => {
         "Personal voice & impact"
       ],
       themes: [
-        { period: "Past", topic: "A story my grandparents told me about Singapore." },
-        { period: "Present", topic: "Something I love about living in Singapore." },
-        { period: "Future", topic: "When I grow up, I want to help Singapore by..." }
+        { topic: "My Favourite Childhood Singapore Memory: What's the funniest, happiest or most unforgettable thing you remember doing in Singapore as a kid?" },
+        { topic: "The Most Magical Singapore Dish Ever! Which Singapore food feels like pure magic to you, and why do you love it so much?" },
+        { topic: "My Dream for Singapore in 10 Years: What cool new things do you hope Singapore will have when you're older?" }
       ]
     },
     {
@@ -34,41 +34,41 @@ const Divisions = () => {
         "Personal voice & impact"
       ],
       themes: [
-        { period: "Past", topic: "The shoulders on which we stand." },
-        { period: "Present", topic: "A moment that made me feel proud to be Singaporean." },
-        { period: "Future", topic: "My dream for Singapore in 2065." }
+        { topic: "The First Thing You'd Share About Singapore: What's the most amazing thing about Singapore you'd tell a new friend from overseas?" },
+        { topic: "If I Were Prime Minister for a Day: If you got to be Singapore's Prime Minister for just one day, what's the coolest thing you'd do?" },
+        { topic: "My Singapore Superhero: Create a superhero based on a Singaporean trait (like 'kiasuism', resilience, multiculturalism etc.). What would his/her superpowers be?" }
       ]
     },
     {
       id: "lower-secondary",
       title: "Lower Secondary (Sec 1–2)",
       icon: Clock,
-      timeLimit: "2.5-3.5 minutes",
+      timeLimit: "2.5-3 minutes",
       criteria: [
         "Language & delivery",
         "Content & relevance", 
         "Personal voice & impact"
       ],
       themes: [
-        { period: "Past", topic: "A lesson from Singapore's history we must not forget." },
-        { period: "Present", topic: "What it means to be Singaporean today." },
-        { period: "Future", topic: "One hope I have for my generation." }
+        { topic: "The Most Unexpected Thing I'd Miss About Singapore When Overseas: What's one surprising thing about Singapore you never thought you'd miss, but end up missing when you travel?" },
+        { topic: "The Everyday National Monument: If you could turn any everyday spot (like a bubble tea shop, bus interchange, community parks etc.) into a National Monument, which would you pick and why?" },
+        { topic: "Singapore's Best Trait: Strength or Weakness? Pick one common Singaporean trait (like 'kiasuism', efficiency, pressure to succeed etc.) and argue if it helps us or holds us back." }
       ]
     },
     {
       id: "upper-secondary",
       title: "Upper Secondary & Youth Open (Sec 3-5, JC, IB, Uni, Poly, ITE)",
       icon: Lightbulb,
-      timeLimit: "2.5-3.5 minutes",
+      timeLimit: "2.5-3 minutes",
       criteria: [
         "Language & delivery",
         "Content & relevance", 
         "Personal voice & impact"
       ],
       themes: [
-        { period: "Past", topic: "We are who we are because of who they were." },
-        { period: "Present", topic: "What Singapore needs most today." },
-        { period: "Future", topic: "As Singapore turns 60, how should we prepare for a future shaped by AI and technology?" }
+        { topic: "\"Lah, leh, lor!\" Does Singlish Help or Hinder Singapore's Global Image? Take a stand and argue your position." },
+        { topic: "A Historical Moment that Shaped Us: What's one event from Singapore's history that matters most to you, and why was it so important?" },
+        { topic: "If I Could Make a New Law for a Day: What novel or useful law would you create if you had the power for one day, and why?" }
       ]
     }
   ];
@@ -97,10 +97,10 @@ const Divisions = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Categories & Themes
+            Semi-Finals Topics
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Open to students from Primary to University levels. Explore themes that connect Singapore's past, present and future.
+            Explore the thought-provoking themes that our Semi-Finalists will tackle on stage.
           </p>
           <Button 
             onClick={handleDownloadRubrics}
@@ -145,14 +145,9 @@ const Divisions = () => {
                       <div className="space-y-4">
                         {division.themes.map((theme, themeIndex) => (
                           <div key={themeIndex} className="bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
-                            <div className="flex flex-col sm:flex-row sm:items-start gap-3">
-                              <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium border flex-shrink-0 w-fit ${getPeriodColor(theme.period)}`}>
-                                {theme.period}
-                              </span>
-                              <p className="text-gray-700 font-medium flex-1 leading-relaxed">
-                                "{theme.topic}"
-                              </p>
-                            </div>
+                            <p className="text-gray-700 font-medium leading-relaxed">
+                              {theme.topic}
+                            </p>
                           </div>
                         ))}
                       </div>

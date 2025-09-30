@@ -61,11 +61,6 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const openRegistrationForm = () => {
-    window.open('https://forms.gle/XSuzJ3eyVqQT6viG7', '_blank');
-    setIsMenuOpen(false);
-  };
-
   return (
     <motion.nav 
       ref={navbarRef}
@@ -74,7 +69,7 @@ const Navbar = () => {
         isScrolled ? "bg-white shadow-sm" : "bg-red-600"
       )} 
       style={{
-        top: 'var(--banner-height, 44px)' // Use CSS variable for banner height
+        top: 'var(--banner-height, 0px)' // No banner by default
       }}
       initial={{ opacity: 1, y: 0 }} 
       animate={{ opacity: 1, y: 0 }}
@@ -103,6 +98,17 @@ const Navbar = () => {
           <div className="hidden xl:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button 
+                onClick={() => scrollToSection('stay-updated')} 
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
+                    : "text-white hover:text-red-100 hover:bg-red-700"
+                )}
+              >
+                Stay Updated
+              </button>
+              <button 
                 onClick={() => scrollToSection('why-take-part')} 
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
@@ -114,17 +120,6 @@ const Navbar = () => {
                 Why Take Part
               </button>
               <button 
-                onClick={() => scrollToSection('how-to-join')} 
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
-                    : "text-white hover:text-red-100 hover:bg-red-700"
-                )}
-              >
-                How To Join
-              </button>
-              <button 
                 onClick={() => scrollToSection('divisions')} 
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
@@ -133,7 +128,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Categories & Themes
+                Semi-Finals Topics
               </button>
               <button 
                 onClick={() => scrollToSection('tips')} 
@@ -168,28 +163,6 @@ const Navbar = () => {
               >
                 Timeline
               </button>
-              <button 
-                onClick={() => scrollToSection('faq')} 
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
-                    : "text-white hover:text-red-100 hover:bg-red-700"
-                )}
-              >
-                FAQ
-              </button>
-              <button                 
-                onClick={openRegistrationForm}
-                className={cn(
-                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "bg-red-600 text-white hover:bg-red-700" 
-                    : "bg-white text-red-600 hover:bg-red-50"
-                )}
-              >
-                Register Now
-              </button>
             </div>
           </div>
           
@@ -222,6 +195,17 @@ const Navbar = () => {
             isScrolled ? "bg-white" : "bg-red-600"
           )}>
           <button 
+            onClick={() => scrollToSection('stay-updated')} 
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "text-gray-700 hover:bg-gray-50" 
+                : "text-white hover:bg-red-700"
+            )}
+          >
+            Stay Updated
+          </button>
+          <button 
             onClick={() => scrollToSection('why-take-part')} 
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
@@ -233,17 +217,6 @@ const Navbar = () => {
             Why Take Part
           </button>
           <button 
-            onClick={() => scrollToSection('how-to-join')} 
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "text-gray-700 hover:bg-gray-50" 
-                : "text-white hover:bg-red-700"
-            )}
-          >
-            How To Join
-          </button>
-          <button 
             onClick={() => scrollToSection('divisions')} 
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
@@ -252,7 +225,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Categories & Themes
+            Semi-Finals Topics
           </button>
           <button 
             onClick={() => scrollToSection('tips')} 
@@ -286,28 +259,6 @@ const Navbar = () => {
             )}
           >
             Timeline
-          </button>
-          <button 
-            onClick={() => scrollToSection('faq')} 
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "text-gray-700 hover:bg-gray-50" 
-                : "text-white hover:bg-red-700"
-            )}
-          >
-            FAQ
-          </button>
-          <button 
-            onClick={openRegistrationForm}
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "bg-red-600 text-white hover:bg-red-700" 
-                : "bg-white text-red-600 hover:bg-red-50"
-            )}
-          >
-            Register Now
           </button>
         </div>
         </motion.div>

@@ -1,5 +1,5 @@
-
-import { ArrowRight, Calendar, Users, Instagram, Facebook } from "lucide-react";
+ 
+import { Calendar, Users, Instagram, Facebook } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -35,10 +35,7 @@ const Hero = () => {
     }
   };
   
-  const openRegistrationForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.open('https://forms.gle/XSuzJ3eyVqQT6viG7', '_blank');
-  };
+  
 
   // Effect to calculate and update the top offset for proper positioning
   useEffect(() => {
@@ -135,7 +132,7 @@ const Hero = () => {
   
   return (
     <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
-      <div className="banner-container relative overflow-hidden w-full" style={{ minHeight: isMobile ? 'calc(130vh)' : 'calc(100vh - 20px)' }}>
+      <div className="banner-container relative overflow-hidden w-full" style={{ minHeight: isMobile ? 'calc(100vh - 56px)' : 'calc(100vh - 20px)' }}>
         {/* Singapore skyline background image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-no-repeat" 
@@ -170,7 +167,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="banner-overlay bg-transparent pt-2 pb-44 sm:pt-28 sm:pb-28 md:py-24 w-full h-full flex items-center">
+        <div className="banner-overlay bg-transparent py-0 w-full h-full flex items-center">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="w-full max-w-5xl mx-auto text-center" variants={itemVariants}>
 
@@ -191,7 +188,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-2 text-white mt-2">
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
-                    <span className="font-medium">Announcement of Semi-Finalists: 13 September 2025 (<a href="https://luma.com/5n4sydhu" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-blue-200 transition-colors">Register</a>)</span>
+                    <span className="font-medium">Semi-Finals: 8-9 November 2025</span>
                   </div>
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
@@ -208,15 +205,6 @@ const Hero = () => {
                   </p>
                   <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-full">
                     <a 
-                      href="https://www.instagram.com/masterspeakersacademy"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white hover:text-pink-200 transition-colors group"
-                    >
-                      <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                      <span className="text-sm font-medium">Instagram</span>
-                    </a>
-                    <a 
                       href="https://www.facebook.com/masterspeakersacademy" 
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -226,15 +214,13 @@ const Hero = () => {
                       <span className="text-sm font-medium">Facebook</span>
                     </a>
                     <a 
-                      href="https://www.tiktok.com/@masterspeakersacademy" 
+                      href="https://www.instagram.com/masterspeakersacademy"
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white hover:text-purple-200 transition-colors group"
+                      className="flex items-center gap-2 text-white hover:text-pink-200 transition-colors group"
                     >
-                      <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19.321 5.562a5.122 5.122 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.294-1.924-1.294-3.338h-3.089v14.564c0 1.4-1.135 2.535-2.535 2.535s-2.535-1.135-2.535-2.535 1.135-2.535 2.535-2.535c.269 0 .529.042.773.121V9.897a6.75 6.75 0 0 0-.773-.044c-3.729 0-6.75 3.021-6.75 6.75s3.021 6.75 6.75 6.75 6.75-3.021 6.75-6.75V8.943a9.317 9.317 0 0 0 5.448 1.756V7.61a5.122 5.122 0 0 1-4.5-2.048z"/>
-                      </svg>
-                      <span className="text-sm font-medium">TikTok</span>
+                      <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium">Instagram</span>
                     </a>
                   </div>
                 </div>
@@ -245,16 +231,9 @@ const Hero = () => {
               </motion.p>
               
               <motion.div className="flex flex-col sm:flex-row gap-3 mt-3 justify-center items-center px-2" variants={itemVariants}>
-                <button 
-                  className="w-full sm:w-auto min-h-[52px] px-6 py-3 bg-white text-red-700 rounded-lg hover:bg-red-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center group text-base font-bold"
-                  onClick={openRegistrationForm}
-                >
-                  Register Now
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
                 
                 <button 
-                  className="w-full sm:w-auto min-h-[52px] px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-red-700 transition-all shadow-lg flex items-center justify-center group text-base font-medium"
+                  className="w-full sm:w-auto min-h-[52px] px-6 py-3 bg-white text-red-700 rounded-lg hover:bg-red-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center group text-base font-bold"
                   onClick={() => {
                     const divisionsSection = document.getElementById('divisions');
                     if (divisionsSection) {
@@ -262,7 +241,7 @@ const Hero = () => {
                     }
                   }}
                 >
-                  Categories & Themes
+                  View Semi-Finals Topics
                 </button>
               </motion.div>
               
@@ -272,8 +251,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Launch Video Section */}
-      <motion.div 
+      {/* Launch Video Section - Hidden */}
+      {/* <motion.div 
         className="relative z-10 w-full bg-gray-50 py-8 md:py-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -308,7 +287,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
       
       {/* Partners horizontal strip */}
       <div className="relative z-10 w-full bg-white shadow-md py-6 md:py-8 border-t border-gray-200">
@@ -356,13 +335,14 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
+      {/* SG60 Edition Callout - Hidden */}
+      {/* <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 mx-auto">
         <motion.div className="mt-6 mb-8 sm:mt-4 sm:mb-6 bg-white rounded-2xl shadow-xl p-3 sm:p-6 md:p-8 max-w-4xl mx-auto border-t-4 border-red-600" variants={containerVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }}>
           <motion.p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed text-center" variants={itemVariants}>
           In this SG60 Edition, NYOC 2025 invites students from Primary to University levels to take the stage and speak from the heart. On the theme <span className="font-bold text-red-700">"My Singapore"</span>, students will reflect on our nation’s past, share what it means to be Singaporean today, and voice their hopes for the future.
           </motion.p>
         </motion.div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

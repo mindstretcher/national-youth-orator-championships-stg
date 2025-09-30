@@ -55,7 +55,7 @@ const OurJudges = () => {
             Our Judges
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals — including Trinity College London's Senior Examiner, Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
+          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals – including Trinity College London's Senior Examiner, Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
           </p>
         </motion.div>
         

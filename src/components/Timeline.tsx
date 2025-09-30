@@ -35,7 +35,6 @@ const Timeline = () => {
     },
     {
       milestone: "Announcement of Semi-Finalists & Live Feedback & Showcase Session",
-      extraInfo: <a href="https://luma.com/5n4sydhu" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">REGISTER NOW: Physical LIVE Session</a>,
       date: "13 September 2025",
       icon: Users,
       category: "semi",
@@ -44,27 +43,19 @@ const Timeline = () => {
     },
     {
       milestone: "Coaching Week for Semi-Finalists",
-      date: "1-7 November 2025",
+      date: "Between 1-7 November 2025",
       icon: Award,
       category: "semi",
       type: "coaching",
       isKeyDate: false
     },
     {
-      milestone: "Live Semi-Finals",
+      milestone: "Live Semi-Finals & Announcement of Finalists",
       date: "8-9 November 2025",
       icon: Users, // Changed from Video to Users (audience/people icon)
       category: "semi",
       type: "event",
       isKeyDate: true
-    },
-    {
-      milestone: "Announcement of Finalists",
-      date: "12 November 2025",
-      icon: Users,
-      category: "finals",
-      type: "announcement",
-      isKeyDate: false
     },
     {
       milestone: "Live Grand Finals",
@@ -146,9 +137,6 @@ const Timeline = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium text-gray-900">{item.milestone}</p>
-                      {item.extraInfo && (
-                        <p className="text-sm text-blue-600 mt-1">{item.extraInfo}</p>
-                      )}
                       <p className="text-sm font-bold text-red-600 mt-1">{item.date}</p>
                     </div>
                   </div>
@@ -220,12 +208,7 @@ const Timeline = () => {
                         <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
-                        <div>
-                          <span className="font-medium text-gray-900">{item.milestone}</span>
-                          {item.extraInfo && (
-                            <div className="mt-1 text-sm text-blue-600">{item.extraInfo}</div>
-                          )}
-                        </div>
+                        <span className="font-medium text-gray-900">{item.milestone}</span>
                       </div>
                     </td>
                     <td className="py-4 px-4 font-bold text-red-600">{item.date}</td>
@@ -262,7 +245,7 @@ const Timeline = () => {
           </motion.div>
         </div>
 
-        {/* Competition Format Summary */}
+        {/* NYOC Key Milestones */}
         <motion.div
           className="mt-12 bg-white rounded-xl p-6 shadow-sm border border-gray-100"
           initial={{ opacity: 0, y: 20 }}
@@ -270,13 +253,13 @@ const Timeline = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-gray-900 text-center">Competition Format</h3>
+          <h3 className="text-2xl font-bold mb-6 text-gray-900 text-center">NYOC Key Milestones</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <Upload className="w-10 h-10 text-blue-600 mx-auto mb-3" />
-              <h4 className="text-lg font-semibold text-blue-800 mb-2">Online Submissions</h4>
-              <p className="text-blue-700 mb-2">Submit video speech</p>
-              <p className="text-sm text-blue-600">Deadline: 31 August 2025</p>
+            <div className="text-center p-4 bg-gray-100 rounded-lg border border-gray-300 opacity-60">
+              <Upload className="w-10 h-10 text-gray-500 mx-auto mb-3" />
+              <h4 className="text-lg font-semibold text-gray-600 mb-2">Online Submissions</h4>
+              <p className="text-gray-500 mb-2">Submit video speech</p>
+              <p className="text-sm text-gray-500">Deadline: 31 August 2025</p>
             </div>
             <div className="text-center p-4 bg-amber-50 rounded-lg border border-amber-200">
               <Video className="w-10 h-10 text-amber-600 mx-auto mb-3" />

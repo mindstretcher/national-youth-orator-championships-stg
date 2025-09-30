@@ -1,6 +1,7 @@
 
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
+import SocialUpdates from '@/components/SocialUpdates';
 import WhyTakePart from '@/components/WhyTakePart';
 import HowToJoin from '@/components/HowToJoin';
 import Divisions from '@/components/Divisions';
@@ -66,12 +67,13 @@ const Index = () => {
         keywords={['speaking competition', 'Singapore youth', 'SG60', 'oratory', 'public speaking', 'national competition', 'Mind Stretcher', 'Master Speakers']}
       />
       <Hero />
+      <SocialUpdates />
       <div id="why-take-part">
         <WhyTakePart />
       </div>
-      <div id="how-to-join">
+      {/* <div id="how-to-join">
         <HowToJoin />
-      </div>
+      </div> */}
       <div id="divisions">
         <Divisions />
       </div>
@@ -84,9 +86,9 @@ const Index = () => {
       <div id="timeline">
         <Timeline />
       </div>
-      <div id="faq">
+      {/* <div id="faq">
         <FAQ />
-      </div>
+      </div> */}
     </PageLayout>
   );
 };

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Mail, MessageCircle } from 'lucide-react';
 
 const ContactInfo = () => {
   return (
@@ -8,10 +8,33 @@ const ContactInfo = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Join?
+            Stay Updated with NYOC
           </h2>
+          <p className="text-red-100 text-lg max-w-2xl mx-auto mb-6">
+            Follow us on{' '}
+            <a 
+              href="https://www.facebook.com/masterspeakersacademy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              <Facebook className="w-5 h-5 inline" />
+              Facebook
+            </a>
+            {' '}and{' '}
+            <a 
+              href="https://www.instagram.com/masterspeakersacademy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              <Instagram className="w-5 h-5 inline" />
+              Instagram
+            </a>
+            .
+          </p>
           <p className="text-red-100 text-lg max-w-2xl mx-auto">
-            Have questions about the National Youth Orator Championships 2025? Contact us today!
+            Contact us anytime if you have any questions.
           </p>
         </div>
 
@@ -46,8 +69,6 @@ const ContactInfo = () => {
             </a>
           </div>
         </div>
-
-
       </div>
     </section>
   );

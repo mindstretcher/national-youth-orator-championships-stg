@@ -1,145 +1,50 @@
 import { motion } from "framer-motion";
-import { Users, Download, FileText, Video } from "lucide-react";
-import { useRef, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 const ExplainerVideo = () => {
-  const videoRef = useRef<HTMLIFrameElement>(null);
-  const infoSessionVideoRef = useRef<HTMLIFrameElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [currentVideo, setCurrentVideo] = useState(0);
 
-  useEffect(() => {
-    // Load YouTube API if not already loaded
-    if (!(window as any).YT) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+  const videos = [
+    {
+      title: "Du Xuan (Harvard & Oxford Alumni) - Judging Feedback Online Preliminary Round",
+      type: "facebook",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1281474359919323&show_text=false&width=560"
+    },
+    {
+      title: "Alvin Kuek (Lead Coach at Master Speakers) - Judging Feedback Online Preliminary Round",
+      type: "facebook",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D737491795949071&show_text=false&width=560"
+    },
+    {
+      title: "Raymond Zhang (Master Speakers Coach) - Judging Feedback Online Preliminary Round",
+      type: "facebook",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D3878359009131904&show_text=false&width=560"
+    },
+    {
+      title: "What Makes A Great Speech",
+      type: "youtube",
+      videoId: "u-3lyOMtmYM"
+    },
+    {
+      title: "Building Strong Portfolios & Profiles with Public Speaking",
+      type: "youtube",
+      videoId: "AoE0JK5fISI"
     }
+  ];
 
-    let player: any = null;
-    let infoSessionPlayer: any = null;
-    let observer: IntersectionObserver | null = null;
-    let infoSessionObserver: IntersectionObserver | null = null;
-    
-    // Function to create the YouTube player
-    const createYouTubePlayer = () => {
-      if (!videoRef.current) return;
-      
-      // Create YouTube player
-      player = new (window as any).YT.Player(videoRef.current, {
-        videoId: 'u-3lyOMtmYM',
-        playerVars: {
-          'autoplay': 0,
-          'mute': 1,
-          'controls': 1,
-          'rel': 0,
-          'modestbranding': 1,
-          'enablejsapi': 1,
-          'hd': 1,
-          'vq': 'hd1080'
-        },
-        events: {
-          'onReady': (event: any) => {
-            // Set up intersection observer once player is ready
-            observer = new IntersectionObserver(
-              (entries) => {
-                const [entry] = entries;
-                if (entry.isIntersecting && player && player.playVideo) {
-                  player.playVideo();
-                } else if (!entry.isIntersecting && player && player.pauseVideo) {
-                  player.pauseVideo();
-                }
-              },
-              { threshold: 0.3 }
-            );
+  const nextVideo = () => {
+    setCurrentVideo((prev) => (prev + 1) % videos.length);
+  };
 
-            // Observe the section element instead of the iframe
-            if (sectionRef.current) {
-              observer.observe(sectionRef.current);
-            }
-          }
-        }
-      });
-    };
+  const prevVideo = () => {
+    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
+  };
 
-    // This section is replaced in the previous chunk
-
-    // Function to create the info session YouTube player
-    const createInfoSessionYouTubePlayer = () => {
-      if (!infoSessionVideoRef.current) return;
-      
-      // Create YouTube player for info session
-      infoSessionPlayer = new (window as any).YT.Player(infoSessionVideoRef.current, {
-        videoId: 'AoE0JK5fISI',
-        playerVars: {
-          'autoplay': 0,
-          'mute': 1,
-          'controls': 1,
-          'rel': 0,
-          'modestbranding': 1,
-          'enablejsapi': 1,
-          'hd': 1,
-          'vq': 'hd1080',
-          'start': 250 // Start at 250 seconds (4:10)
-        },
-        events: {
-          'onReady': (event: any) => {
-            // Set up intersection observer once player is ready
-            infoSessionObserver = new IntersectionObserver(
-              (entries) => {
-                const [entry] = entries;
-                if (entry.isIntersecting && infoSessionPlayer && infoSessionPlayer.playVideo) {
-                  infoSessionPlayer.playVideo();
-                } else if (!entry.isIntersecting && infoSessionPlayer && infoSessionPlayer.pauseVideo) {
-                  infoSessionPlayer.pauseVideo();
-                }
-              },
-              { threshold: 0.3 }
-            );
-
-            // Observe the container element
-            const container = infoSessionVideoRef.current?.closest('.video-container');
-            if (container) {
-              infoSessionObserver.observe(container);
-            }
-          }
-        }
-      });
-    };
-
-    // Initialize when YouTube API is ready
-    if ((window as any).YT && (window as any).YT.Player) {
-      createYouTubePlayer();
-      createInfoSessionYouTubePlayer();
-    } else {
-      // Set up callback for when API loads
-      const previousCallback = (window as any).onYouTubeIframeAPIReady;
-      (window as any).onYouTubeIframeAPIReady = () => {
-        if (previousCallback) previousCallback();
-        createYouTubePlayer();
-        createInfoSessionYouTubePlayer();
-      };
-    }
-
-    return () => {
-      // Cleanup
-      if (observer) {
-        observer.disconnect();
-      }
-      if (infoSessionObserver) {
-        infoSessionObserver.disconnect();
-      }
-      if (player && player.destroy) {
-        player.destroy();
-      }
-      if (infoSessionPlayer && infoSessionPlayer.destroy) {
-        infoSessionPlayer.destroy();
-      }
-    };
-  }, []);
+  const currentVideoData = videos[currentVideo];
 
   return (
-    <section ref={sectionRef} className="bg-white py-16 w-full">
+    <section className="bg-white py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div 
           className="text-center mb-12"
@@ -151,111 +56,81 @@ const ExplainerVideo = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
             Tips & Resources
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
-            Learn from Master Speakers experts and access free NYOC resources to help you prepare your winning speech.
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Watch expert tips and judging feedback from Master Speakers coaches
           </p>
-          
-          {/* Free Resources Section */}
-          <motion.div
-            className="bg-gradient-to-br from-red-50 via-orange-50 to-red-100 rounded-xl p-6 mb-8 border border-red-200"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Download className="w-6 h-6 text-red-600" />
-              <h3 className="text-xl font-bold text-red-800">Download NYOC Resources</h3>
-            </div>
-            
-            <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
-              We've prepared official sample speeches & speech tips for every age category, so you can jump straight into recording your NYOC video submission. 
-              These resources are used in our Master Speakers classes and are now available for everyone!
-            </p>
-            
-            <p className="text-gray-800 font-semibold mb-4 text-lg">Choose your approach:</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-4xl mx-auto">
-              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
-                <FileText className="w-8 h-8 text-red-600 mb-2" />
-                <span className="font-medium text-gray-800">Use the sample speeches as they are</span>
-              </div>
-              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
-                <Video className="w-8 h-8 text-red-600 mb-2" />
-                <span className="font-medium text-gray-800">Adapt them with your own experiences</span>
-              </div>
-              <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg">
-                <FileText className="w-8 h-8 text-red-600 mb-2" />
-                <span className="font-medium text-gray-800">Create a completely unique story from scratch</span>
-              </div>
-            </div>
-            
-            <button
-              onClick={() => window.open('https://drive.google.com/drive/folders/1iQNhvmCu8rpd44hyRUiQzaz_N3Q6IBCF?usp=sharing', '_blank')}
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
-            >
-              <Download className="w-5 h-5" />
-              Download Resources
-            </button>
-          </motion.div>
         </motion.div>
         
-        <motion.div
-          className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">What Makes a Great Speech?</h3>
-            <p className="text-gray-600 text-center">Watch our expert tips from Master Speakers</p>
-          </div>
-          
-          <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl video-container">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
-            <iframe
-              ref={videoRef as any}
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/u-3lyOMtmYM?enablejsapi=1&mute=1"
-              title="What Makes a Great Speech?"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
-              <div className="flex items-center text-white">
-                <Users className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">Presented by Master Speakers</span>
-              </div>
+        {/* Video Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevVideo}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 bg-white hover:bg-gray-50 text-red-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
+            aria-label="Previous video"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={nextVideo}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 bg-white hover:bg-gray-50 text-red-600 rounded-full p-3 shadow-lg transition-all hover:scale-110"
+            aria-label="Next video"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Video Container */}
+          <motion.div
+            key={currentVideo}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mb-6"
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center px-4">
+              {currentVideoData.title}
+            </h3>
+            
+            <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl">
+              {currentVideoData.type === "youtube" ? (
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${currentVideoData.videoId}`}
+                  title={currentVideoData.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={currentVideoData.embedUrl}
+                  title={currentVideoData.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
+          </motion.div>
+
+          {/* Video Indicators */}
+          <div className="flex justify-center gap-2">
+            {videos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentVideo(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentVideo
+                    ? "w-8 bg-red-600"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to video ${index + 1}`}
+              />
+            ))}
           </div>
-          
-          {/* Information Session Video */}
-          <div className="mt-12 mb-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">NYOC Information Session</h3>
-            <p className="text-gray-600 text-center">Learn how our students built outstanding portfolios through public speaking, why NYOC is a great platform, and preparation tips</p>
-          </div>
-          
-          <div className="bg-gray-900 rounded-xl aspect-video relative overflow-hidden shadow-2xl video-container">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-red-800/20 pointer-events-none"></div>
-            <iframe
-              ref={infoSessionVideoRef as any}
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/AoE0JK5fISI?enablejsapi=1&mute=1&start=250"
-              title="NYOC Information Session"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
-              <div className="flex items-center text-white">
-                <Users className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">NYOC Webinar</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
