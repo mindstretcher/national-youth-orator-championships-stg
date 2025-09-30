@@ -83,7 +83,7 @@ const Divisions = () => {
   };
 
   const handleDownloadRubrics = () => {
-    window.open('https://drive.google.com/file/d/1JizjCjMX4HweAF5OugCkWemwbEB0MMZw/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1rLXDlt9RH0dlMhsWXu9KD53To6tSYVBC/view?usp=drive_link', '_blank');
   };
 
   return (
