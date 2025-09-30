@@ -58,7 +58,7 @@ const Timeline = () => {
       isKeyDate: true
     },
     {
-      milestone: "Live Grand Finals",
+      milestone: "Live Grand Finals & Announcement of Winners",
       date: "15 November 2025",
       icon: Trophy,
       category: "finals",
