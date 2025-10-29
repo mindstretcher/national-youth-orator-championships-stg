@@ -161,7 +161,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Timeline
+                Competition Key Details
               </button>
             </div>
           </div>
@@ -258,7 +258,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Timeline
+            Competition Key Details
           </button>
         </div>
         </motion.div>

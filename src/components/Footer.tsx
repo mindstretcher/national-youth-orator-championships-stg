@@ -85,7 +85,7 @@ const Footer = () => {
                   const offsetPosition = elementPosition + window.pageYOffset - offset;
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
-              }} className="text-red-100 hover:text-white transition-colours">Timeline</button></li>
+              }} className="text-red-100 hover:text-white transition-colours">Competition Key Details</button></li>
             </ul>
           </div>
           

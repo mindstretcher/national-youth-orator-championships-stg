@@ -55,7 +55,24 @@ const Timeline = () => {
       icon: Users, // Changed from Video to Users (audience/people icon)
       category: "semi",
       type: "event",
-      isKeyDate: true
+      isKeyDate: true,
+      extraInfo: (
+        <div className="mt-3 text-sm space-y-2">
+          <div>
+            <p className="font-semibold text-gray-800">Location:</p>
+            <p className="text-gray-700"><strong><a href="https://maps.app.goo.gl/Cd2L4ioc8GUTc3Ep8" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">Venue Plus</a>:</strong> Venue Plus at Grantral Mall/Grantral Complex @ MacPherson, 601 MacPherson Rd, #06-08, Singapore 368252</p>
+          </div>
+          <div>
+            <p className="font-semibold text-gray-800">Date & Timings:</p>
+            <ul className="text-gray-700 ml-4 list-disc">
+              <li>Lower Primary: 8 Nov (Sat), 8:30am - 12:30pm</li>
+              <li>Upper Primary: 8 Nov (Sat), 1:30 - 6:00pm</li>
+              <li>Lower Secondary: 9 Nov (Sun), 8:30am - 1:00pm</li>
+              <li>Upper Secondary: 9 Nov (Sun), 1:30 - 6:00pm</li>
+            </ul>
+          </div>
+        </div>
+      )
     },
     {
       milestone: "Live Grand Finals & Announcement of Winners",
@@ -99,7 +116,7 @@ const Timeline = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Competition Timeline
+            Competition Key Details
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Important dates and milestones for NYOC 2025.
@@ -138,6 +155,7 @@ const Timeline = () => {
                     <div className="flex-1">
                       <p className="text-sm font-medium text-gray-900">{item.milestone}</p>
                       <p className="text-sm font-bold text-red-600 mt-1">{item.date}</p>
+                      {item.extraInfo && <div className="mt-2">{item.extraInfo}</div>}
                     </div>
                   </div>
                 </motion.div>
@@ -208,10 +226,13 @@ const Timeline = () => {
                         <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
-                        <span className="font-medium text-gray-900">{item.milestone}</span>
+                        <div>
+                          <span className="font-medium text-gray-900">{item.milestone}</span>
+                          {item.extraInfo && <div className="mt-2">{item.extraInfo}</div>}
+                        </div>
                       </div>
                     </td>
-                    <td className="py-4 px-4 font-bold text-red-600">{item.date}</td>
+                    <td className="py-4 px-4 font-bold text-red-600 align-top">{item.date}</td>
                   </motion.tr>
                 ))}
                 
