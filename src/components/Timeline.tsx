@@ -80,7 +80,22 @@ const Timeline = () => {
       icon: Trophy,
       category: "finals",
       type: "final",
-      isKeyDate: true
+      isKeyDate: true,
+      extraInfo: (
+        <div className="mt-3 text-sm space-y-2">
+          <div>
+            <p className="font-semibold text-gray-800">Location:</p>
+            <p className="text-gray-700"><strong><a href="https://maps.app.goo.gl/5wsRJSy4B5wY2kLw8" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">Trehaus</a>:</strong> Trehaus at Funan Mall, 109 North Bridge Road, #07-21 Singapore 179097 (Via Lift Lobby A), Singapore 179097</p>
+          </div>
+          <div>
+            <p className="font-semibold text-gray-800">Date & Timings:</p>
+            <ul className="text-gray-700 ml-4 list-disc">
+              <li>Lower Primary & Upper Primary: 15 Nov (Sat), 8:30am - 12:30pm</li>
+              <li>Lower Secondary, Upper Secondary & Youth Open: 15 Nov (Sat), 1:30pm - 6:00pm</li>
+            </ul>
+          </div>
+        </div>
+      )
     }
   ];
 
@@ -255,10 +270,13 @@ const Timeline = () => {
                         <div className={`w-8 h-8 min-w-[2rem] flex items-center justify-center rounded-full ${getTypeColor(item.type)}`}>
                           <item.icon className="w-4 h-4" />
                         </div>
-                        <span className="font-medium text-gray-900">{item.milestone}</span>
+                        <div>
+                          <span className="font-medium text-gray-900">{item.milestone}</span>
+                          {item.extraInfo && <div className="mt-2">{item.extraInfo}</div>}
+                        </div>
                       </div>
                     </td>
-                    <td className="py-4 px-4 font-bold text-red-600">{item.date}</td>
+                    <td className="py-4 px-4 font-bold text-red-600 align-top">{item.date}</td>
                   </motion.tr>
                 ))}
               </tbody>
