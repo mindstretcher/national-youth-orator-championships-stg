@@ -128,7 +128,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Semi-Finals Topics
+                Finals Topics
               </button>
               <button 
                 onClick={() => scrollToSection('tips')} 
@@ -225,7 +225,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Semi-Finals Topics
+            Finals Topics
           </button>
           <button 
             onClick={() => scrollToSection('tips')} 

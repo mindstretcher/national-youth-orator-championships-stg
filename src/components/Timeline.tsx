@@ -55,24 +55,7 @@ const Timeline = () => {
       icon: Users, // Changed from Video to Users (audience/people icon)
       category: "semi",
       type: "event",
-      isKeyDate: true,
-      extraInfo: (
-        <div className="mt-3 text-sm space-y-2">
-          <div>
-            <p className="font-semibold text-gray-800">Location:</p>
-            <p className="text-gray-700"><strong><a href="https://maps.app.goo.gl/Cd2L4ioc8GUTc3Ep8" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">Venue Plus</a>:</strong> Venue Plus at Grantral Mall/Grantral Complex @ MacPherson, 601 MacPherson Rd, #06-08, Singapore 368252</p>
-          </div>
-          <div>
-            <p className="font-semibold text-gray-800">Date & Timings:</p>
-            <ul className="text-gray-700 ml-4 list-disc">
-              <li>Lower Primary: 8 Nov (Sat), 8:30am - 12:30pm</li>
-              <li>Upper Primary: 8 Nov (Sat), 1:30 - 6:00pm</li>
-              <li>Lower Secondary: 9 Nov (Sun), 8:30am - 1:00pm</li>
-              <li>Upper Secondary: 9 Nov (Sun), 1:30 - 6:00pm</li>
-            </ul>
-          </div>
-        </div>
-      )
+      isKeyDate: true
     },
     {
       milestone: "Live Grand Finals & Announcement of Winners",
@@ -300,11 +283,11 @@ const Timeline = () => {
               <p className="text-gray-500 mb-2">Submit video speech</p>
               <p className="text-sm text-gray-500">Deadline: 31 August 2025</p>
             </div>
-            <div className="text-center p-4 bg-amber-50 rounded-lg border border-amber-200">
-              <Video className="w-10 h-10 text-amber-600 mx-auto mb-3" />
-              <h4 className="text-lg font-semibold text-amber-800 mb-2">Semi-Finals</h4>
-              <p className="text-amber-700 mb-2">Semi-finals live speeches</p>
-              <p className="text-sm text-amber-600">8-9 November 2025</p>
+            <div className="text-center p-4 bg-gray-100 rounded-lg border border-gray-300 opacity-60">
+              <Video className="w-10 h-10 text-gray-500 mx-auto mb-3" />
+              <h4 className="text-lg font-semibold text-gray-600 mb-2">Semi-Finals</h4>
+              <p className="text-gray-500 mb-2">Semi-finals live speeches</p>
+              <p className="text-sm text-gray-500">8-9 November 2025</p>
             </div>
             <div className="text-center p-4 bg-red-50 rounded-lg border border-red-200">
               <Trophy className="w-10 h-10 text-red-600 mx-auto mb-3" />

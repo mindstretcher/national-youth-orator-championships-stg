@@ -33,11 +33,32 @@ const OurJudges = () => {
       image: "/images/judges/hakim.jpg"
     },
     {
+      name: "Kristie Lim",
+      title: "Founding Principal",
+      organization: "Mind Stretcher",
+      description: "A trained lawyer and accountant turned educator, Kristie founded the Mind Stretcher Education Group and built it into one of Singapore's leading enrichment networks with over 30 centres. With over two decades in education, she champions accessible, high-quality learning and holistic growth for every child.",
+      image: "/images/judges/kristie-lim.jpg"
+    },
+    {
+      name: "John Lee",
+      title: "Chief of Staff",
+      organization: "Mind Stretcher",
+      description: "John leads human capital development and strategic initiatives at Mind Stretcher. A former national-level debater and seasoned moderator, he brings deep experience in leadership, learning design, and student engagement. Having spent years in multinational management roles, he combines global insight with a passion for nurturing purpose-driven youth.",
+      image: "/images/judges/john-lee.jpg"
+    },
+    {
       name: "Alvin Kuek",
       title: "Lead Coach",
       organization: "Master Speakers",
-      description: "A former ASEAN Scholar at Raffles Institution and Raffles Junior College, and Kuok Foundation University Scholar, Alvin is a seasoned educator with over 20 years of experience. An animated speaker and inspiring mentor, he has trained thousands – including four President’s Scholars – to become confident communicators. As Lead Coach at Master Speakers, he continues to shape young voices with insight and heart. At NYOC 2025, he brings deep expertise, proven mentorship, and a heartfelt belief in the power of youth voice.",
+      description: "A former ASEAN Scholar at Raffles Institution and Raffles Junior College, and Kuok Foundation University Scholar, Alvin is a seasoned educator with over 20 years of experience. An animated speaker and inspiring mentor, he has trained thousands – including four President's Scholars – to become confident communicators. As Lead Coach at Master Speakers, he continues to shape young voices with insight and heart. At NYOC 2025, he brings deep expertise, proven mentorship, and a heartfelt belief in the power of youth voice.",
       image: "/images/judges/alvin.jpg"
+    },
+    {
+      name: "Raymond Zhang",
+      title: "Lead Coach",
+      organization: "Master Speakers",
+      description: "Raymond is a core Trinity College London Trainer and Lead Coach at Master Speakers, with over 15 years of coaching experience. A former competitive debater and Orator's Trophy winner, he has adjudicated numerous public speaking contests and trained hundreds of students and adults in effective communication.",
+      image: "/images/judges/raymond-zhang.JPG"
     }
   ];
 

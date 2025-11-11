@@ -10,89 +10,94 @@ const SocialUpdates = () => {
 
   const posts = [
     {
-      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid0CEKBXpshkf8avPHWFeAVNNMumsPrsCTqZcSotKwvJCmsvyZMA27r3cLhgYgbxgE5l",
-      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid0CEKBXpshkf8avPHWFeAVNNMumsPrsCTqZcSotKwvJCmsvyZMA27r3cLhgYgbxgE5l&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid02C8Dk8H7MsdxEQodX7M2e6TFs9DNc89DHkh8FxY8vrDVyBqMvqtT9B2fTQjL5vqsQl",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid02C8Dk8H7MsdxEQodX7M2e6TFs9DNc89DHkh8FxY8vrDVyBqMvqtT9B2fTQjL5vqsQl&show_text=true&width=350",
       title: "NYOC Update 1"
     },
     {
-      url: "https://www.facebook.com/reel/797583576067267",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F797583576067267&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid0vouUPn6YWkYowjfgcyBzE5D8jMLdTayqXrN5c7oDv2KvTf3bCcRYELCGRTBeMLSZl",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid0vouUPn6YWkYowjfgcyBzE5D8jMLdTayqXrN5c7oDv2KvTf3bCcRYELCGRTBeMLSZl&show_text=true&width=350",
       title: "NYOC Update 2"
     },
     {
-      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid0V9M9qA25TRLvjFdp7CBUgicryBaK1fZUDnEKbrD5tXHL4wbf4zyF5sLR9YSSANcRl",
-      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid0V9M9qA25TRLvjFdp7CBUgicryBaK1fZUDnEKbrD5tXHL4wbf4zyF5sLR9YSSANcRl&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid02WuNcGiipLiHTFbjX5CYvGrXoAMi8LToe5yjTWD4uGdVvEWFe4eMsLwuZ5u9tbwVMl",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid02WuNcGiipLiHTFbjX5CYvGrXoAMi8LToe5yjTWD4uGdVvEWFe4eMsLwuZ5u9tbwVMl&show_text=true&width=350",
       title: "NYOC Update 3"
     },
     {
-      url: "https://www.facebook.com/watch/?v=3878359009131904",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D3878359009131904&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid029XWbHqDUZUSEgBAxAcyqLYrCUggXf12d8HFDzP26DJVNLAFoCi85XtXgV87DNFPpl",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid029XWbHqDUZUSEgBAxAcyqLYrCUggXf12d8HFDzP26DJVNLAFoCi85XtXgV87DNFPpl&show_text=true&width=350",
       title: "NYOC Update 4"
     },
     {
-      url: "https://www.facebook.com/watch/?v=737491795949071",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D737491795949071&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid024JftmqLSC6omQ7jdk7fQhcv9ba9maPbMPCc1T5zfjZFrTrPrYZ8nmF6Yz4c9ubk3l",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid024JftmqLSC6omQ7jdk7fQhcv9ba9maPbMPCc1T5zfjZFrTrPrYZ8nmF6Yz4c9ubk3l&show_text=true&width=350",
       title: "NYOC Update 5"
     },
     {
-      url: "https://www.facebook.com/watch/?v=664839779973184",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D664839779973184&show_text=true&width=350",
+      url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid0erEwBCbuVSkpMfhQ49JpcHrEpN5MkuXvfrZANz8Jb1YcF32wNwNFiqmBeq8NwQpZl",
+      embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid0erEwBCbuVSkpMfhQ49JpcHrEpN5MkuXvfrZANz8Jb1YcF32wNwNFiqmBeq8NwQpZl&show_text=true&width=350",
       title: "NYOC Update 6"
     },
     {
-      url: "https://www.facebook.com/watch/?v=1827244744548388",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1827244744548388&show_text=true&width=350",
+      url: "https://www.facebook.com/reel/743108442137017",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F743108442137017&show_text=true&width=350",
       title: "NYOC Update 7"
     },
     {
-      url: "https://www.facebook.com/watch/?v=1581039803317195",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1581039803317195&show_text=true&width=350",
+      url: "https://www.facebook.com/reel/878006584765653",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F878006584765653&show_text=true&width=350",
       title: "NYOC Update 8"
     },
     {
-      url: "https://www.facebook.com/watch/?v=2024589995040136",
-      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D2024589995040136&show_text=true&width=350",
+      url: "https://www.facebook.com/reel/1050571880386129",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1050571880386129&show_text=true&width=350",
       title: "NYOC Update 9"
+    },
+    {
+      url: "https://www.facebook.com/reel/2092117031318801",
+      embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2092117031318801&show_text=true&width=350",
+      title: "NYOC Update 10"
     },
     {
       url: "https://www.facebook.com/watch/?v=1281474359919323",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1281474359919323&show_text=true&width=350",
-      title: "NYOC Update 10"
+      title: "NYOC Update 11"
     },
     {
       url: "https://www.facebook.com/watch/?v=1321285996033923",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1321285996033923&show_text=true&width=350",
-      title: "NYOC Update 11"
+      title: "NYOC Update 12"
     },
     {
       url: "https://www.facebook.com/masterspeakersacademy/posts/pfbid029Jvmu2jzacsVyZHGA2Sj4CKeH8MR7xzxQrC6WKuipVemoYLCP8Mr9baVJGMKrQVel",
       embedUrl: "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmasterspeakersacademy%2Fposts%2Fpfbid029Jvmu2jzacsVyZHGA2Sj4CKeH8MR7xzxQrC6WKuipVemoYLCP8Mr9baVJGMKrQVel&show_text=true&width=350",
-      title: "NYOC Update 5"
+      title: "NYOC Update 13"
     },
     {
       url: "https://www.facebook.com/reel/1854727915440326",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1854727915440326&show_text=true&width=350",
-      title: "NYOC Update 6"
+      title: "NYOC Update 14"
     },
     {
       url: "https://www.facebook.com/reel/1511974333574273",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1511974333574273&show_text=true&width=350",
-      title: "NYOC Update 7"
+      title: "NYOC Update 15"
     },
     {
       url: "https://www.facebook.com/reel/1732155731003186",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1732155731003186&show_text=true&width=350",
-      title: "NYOC Update 8"
+      title: "NYOC Update 16"
     },
     {
       url: "https://www.facebook.com/reel/757393780226901",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F757393780226901&show_text=true&width=350",
-      title: "NYOC Update 9"
+      title: "NYOC Update 17"
     },
     {
       url: "https://www.facebook.com/reel/1069100435382467",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1069100435382467&show_text=true&width=350",
-      title: "NYOC Update 10"
+      title: "NYOC Update 18"
     }
   ];
 

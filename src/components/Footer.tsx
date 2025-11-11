@@ -58,7 +58,7 @@ const Footer = () => {
                   const offsetPosition = elementPosition + window.pageYOffset - offset;
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
                 }
-              }} className="text-red-100 hover:text-white transition-colours">Semi-Finals Topics</button></li>
+              }} className="text-red-100 hover:text-white transition-colours">Finals Topics</button></li>
               <li><button onClick={() => {
                 const element = document.getElementById('tips');
                 if (element) {

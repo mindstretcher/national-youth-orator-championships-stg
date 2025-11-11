@@ -66,9 +66,7 @@ const Divisions = () => {
         "Personal voice & impact"
       ],
       themes: [
-        { topic: "\"Lah, leh, lor!\" Does Singlish Help or Hinder Singapore's Global Image? Take a stand and argue your position." },
-        { topic: "A Historical Moment that Shaped Us: What's one event from Singapore's history that matters most to you, and why was it so important?" },
-        { topic: "If I Could Make a New Law for a Day: What novel or useful law would you create if you had the power for one day, and why?" }
+        { topic: "How would you make Singapore better?" }
       ]
     }
   ];
@@ -97,10 +95,10 @@ const Divisions = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Semi-Finals Topics
+            Finals Topics
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Explore the thought-provoking themes that our Semi-Finalists will tackle on stage.
+            Explore the thought-provoking themes that our Finalists will tackle on stage.
           </p>
           <Button 
             onClick={handleDownloadRubrics}
@@ -140,8 +138,8 @@ const Divisions = () => {
                   <div className="ml-16 space-y-6">
                     {/* Speech Themes */}
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Speech Themes</h4>
-                      <p className="text-gray-700 mb-4">Please choose 1 out of the 3 themes below for your speech:</p>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Speech Theme</h4>
+                      <p className="text-gray-700 mb-4">{division.themes.length > 1 ? 'Please choose 1 out of the 3 themes below for your speech:' : 'Your speech theme:'}</p>
                       <div className="space-y-4">
                         {division.themes.map((theme, themeIndex) => (
                           <div key={themeIndex} className="bg-white rounded-lg p-4 border border-gray-100 shadow-sm">

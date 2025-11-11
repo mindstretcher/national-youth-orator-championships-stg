@@ -7,6 +7,11 @@ const ExplainerVideo = () => {
 
   const videos = [
     {
+      title: "Tips & Strategies to Prepare Effectively for NYOC",
+      type: "youtube",
+      videoId: "hRVnuX2omBo"
+    },
+    {
       title: "Du Xuan (Harvard & Oxford Alumni) - Judging Feedback Online Preliminary Round",
       type: "facebook",
       embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1281474359919323&show_text=false&width=560"

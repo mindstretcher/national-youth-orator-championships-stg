@@ -1,5 +1,5 @@
  
-import { Calendar, Users, Instagram, Facebook } from "lucide-react";
+import { Calendar, Users, Instagram, Facebook, MapPin } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -188,7 +188,11 @@ const Hero = () => {
                 <div className="flex flex-col gap-2 text-white mt-2">
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Calendar className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
-                    <span className="font-medium">Semi-Finals: 8-9 November 2025</span>
+                    <span className="font-medium">Finals: 15 November 2025 (Sat)</span>
+                  </div>
+                  <div className="flex items-center justify-center text-base sm:text-base">
+                    <MapPin className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
+                    <a href="https://maps.app.goo.gl/nNvZJZsewdwu4c5B7" target="_blank" rel="noopener noreferrer" className="font-medium underline hover:text-red-100 transition-colors cursor-pointer">Trehaus at Funan Mall</a>
                   </div>
                   <div className="flex items-center justify-center text-base sm:text-base">
                     <Users className="w-5 h-5 sm:w-5 sm:h-5 mr-2" />
@@ -232,17 +236,23 @@ const Hero = () => {
               
               <motion.div className="flex flex-col sm:flex-row gap-3 mt-3 justify-center items-center px-2" variants={itemVariants}>
                 
-                <button 
+                <a 
+                  href="https://luma.com/nyoc-grand-final-primary?fbclid=IwY2xjawN_fz1leHRuA2FlbQIxMABicmlkETFJUVFobnlPM2txR09Sdjhpc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmr0jHGcy6_pp3WcKqsmpWtKZYP2a5epp73Xgplopv-No1PHyYCBQqWMNI56_aem_Ofr4sUoPRrbWuIQKkHqT7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full sm:w-auto min-h-[52px] px-6 py-3 bg-white text-red-700 rounded-lg hover:bg-red-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center group text-base font-bold"
-                  onClick={() => {
-                    const divisionsSection = document.getElementById('divisions');
-                    if (divisionsSection) {
-                      divisionsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
                 >
-                  View Semi-Finals Topics
-                </button>
+                  RSVP for Finals (Primary)
+                </a>
+                
+                <a 
+                  href="https://luma.com/nyoc-grand-final-sec-open-youth?fbclid=IwY2xjawN_f2VleHRuA2FlbQIxMABicmlkETFJUVFobnlPM2txR09Sdjhpc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmr0jHGcy6_pp3WcKqsmpWtKZYP2a5epp73Xgplopv-No1PHyYCBQqWMNI56_aem_Ofr4sUoPRrbWuIQKkHqT7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto min-h-[52px] px-6 py-3 bg-white text-red-700 rounded-lg hover:bg-red-50 transition-all shadow-lg hover:shadow-xl flex items-center justify-center group text-base font-bold"
+                >
+                  RSVP for Finals (Secondary & Youth Open)
+                </a>
               </motion.div>
               
               {/* Partners moved to horizontal strip below hero section */}
