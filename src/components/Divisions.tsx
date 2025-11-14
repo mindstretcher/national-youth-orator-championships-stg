@@ -66,7 +66,13 @@ const Divisions = () => {
         "Personal voice & impact"
       ],
       themes: [
-        { topic: "How would you make Singapore better?" }
+        { 
+          topic: "How would you make Singapore better?",
+          clarification: [
+            "We speak not just to express ourselves, but to influence others for good. You can tackle this topic in any way you want. This is your stage, and we're excited to hear your point of view.",
+            "One useful device is to imagine you are talking to a representative group of Singaporeans. How would you help them understand why you want to improve something? How are they likely to react, and do you think they would be persuaded?"
+          ]
+        }
       ]
     }
   ];
@@ -146,6 +152,15 @@ const Divisions = () => {
                             <p className="text-gray-700 font-medium leading-relaxed">
                               {theme.topic}
                             </p>
+                            {theme.clarification && (
+                              <div className="mt-4 space-y-3">
+                                {theme.clarification.map((para, paraIndex) => (
+                                  <p key={paraIndex} className="text-gray-600 text-sm leading-relaxed">
+                                    {para}
+                                  </p>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
